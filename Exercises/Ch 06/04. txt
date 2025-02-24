@@ -1,0 +1,4 @@
+See sieveOptimized() for implementation.
+
+Sieve: 10.3679  seconds, biggest idx: 29999999.
+Sieve: 12.1082  seconds, biggest idx: 339999999.

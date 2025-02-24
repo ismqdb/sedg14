@@ -1,0 +1,7 @@
+I would say it doesn't have any extraneous pushes.
+
+The recursive version calls the function for both left and right node, 
+which means that both of these get pushed to the stack (one that compiler created).
+
+On the other hand, the iterative version pushes only the right nodes to the stack,
+which is half of what the recursive version pushes.

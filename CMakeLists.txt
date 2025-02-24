@@ -46,6 +46,8 @@ add_executable(sedg14 main.c
     "Snippets/22. recursion removal/22. recursionRemovalPreOrder.c"
     "Snippets/22. recursion removal/22. recursionRemovalInOrder.c"
     "Snippets/22. recursion removal/22. recursionRemovalPostOrder.c"
+
+    "Snippets/23. sort/23. sort3.c"
 )
 
 target_link_libraries(sedg14 m) # Link libmath

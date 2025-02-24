@@ -1,0 +1,2 @@
+Nothing out of the ordinary, the compiler needs to set up a stack frames and pass values to 
+local variables as it usually does for any kind of C function.

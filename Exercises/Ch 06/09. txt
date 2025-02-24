@@ -1,0 +1,12 @@
+For values 0-pow(2, 16), height 3:
+
+Iterative: 9.435.
+Recursive: 0.001.
+
+For values 0-pow(2, 16), height 3:
+
+Iterative: 9.435.
+Recursive: 0.001.
+
+Iterative solution is worse for smaller values, ie it is almost constant.
+The recursive version gets worse as the number of recursive calls increases.

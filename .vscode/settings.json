@@ -68,6 +68,10 @@
         "treenode.h": "c",
         "13. queuearray.h": "c",
         "22. recursionremovalpreorder.h": "c",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "chrono": "cpp",
+        "iomanip": "cpp",
+        "sstream": "cpp",
+        "cinttypes": "cpp"
     }
 }

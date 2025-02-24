@@ -5,14 +5,15 @@
 /* ******************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <assert.h>
-#include <math.h>
 
 /* ******************************************************************************** */
 
-int sieve(int);
-int sieveUnbounded();
-int sieveOptimized();
+void sort3(int[], int);
+void sort3_driver();
+
+void selectionSort(int[], int);
+void insertionSort(int[], int);
+void bubbleSort(int[], int);
 
 /* ******************************************************************************** */

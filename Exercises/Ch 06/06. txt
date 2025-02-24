@@ -1,0 +1,5 @@
+Pre order iterative:        45000 n seconds.
+Pre order recursive:        5000 n seconds.
+Pre order RR inline:        8000 n seconds.
+
+About the same.
