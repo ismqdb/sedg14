@@ -10,7 +10,7 @@
 /* ******************************************************************************** */
 
 void sort3(int[], int);
-void sort3_driver();
+void sort3Driver();
 
 void selectionSort(int[], int);
 void insertionSort(int[], int);
