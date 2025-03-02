@@ -14,6 +14,7 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/mass suicide/massSuicide.c"
     "Snippets/00. includes/postfix/postfix.c"
     "Snippets/00. includes/point/point.c"
+    "Snippets/00. includes/bit manip/bitManip.c"
 
     "Snippets/00. includes/recurrences/halfInput.c"
     "Snippets/00. includes/recurrences/largestLog.c"
