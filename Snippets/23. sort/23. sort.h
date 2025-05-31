@@ -9,7 +9,17 @@
 
 /* ******************************************************************************** */
 
-void sort3(int[], int);
-void sort3Driver();
+
+
+/* ******************************************************************************** */
+
+void bubbleSort(int[], int);
+void selectionSort(int[], int);
+
+void insertionSort(int[], int);
+void insertionSortLargeRecord(int[], int[], int);
+void insertionSortPointers(int[], int*[], int);
+
+void insitu(int[], int[], int);
 
 /* ******************************************************************************** */

@@ -47,6 +47,7 @@ add_executable(sedg14 main.c
     "Snippets/22. recursion removal/22. recursionRemovalInOrder.c"
     "Snippets/22. recursion removal/22. recursionRemovalPostOrder.c"
 
+    "Snippets/23. sort/23. sort.c"
     "Snippets/23. sort/23. sort3.c"
 )
 

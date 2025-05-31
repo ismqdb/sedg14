@@ -14,7 +14,7 @@ struct queueLL queueLLInit(){
 /* ******************************************************************************** */
 
 void queueLLPutInt(struct queueLL *queue, int value){
-    struct node *item = nodeAlloc(value);
+    struct node *item = nodeAlloc();
     struct node **p = &queue->head;
 
     if(queue->head == NULL){
