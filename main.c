@@ -11,8 +11,15 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    i32 array[] = {5, 7, 1, 4, 6};
-    insertionSort(array, 5);
+    enum {size = 5};
+
+    i32 array[size] = {5, 7, 1, 4, 6};
+    i32 indexes[size];
+
+    for(int i = 0; i < size; i++)
+        indexes[i] = i;
+
+    insertionSortPointers(array, indexes, size);
 }
 
 /* ******************************************************************************** */
