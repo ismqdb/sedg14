@@ -73,27 +73,6 @@ void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
 
 /* ******************************************************************************** */
 
-void insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
-    i32 *v;
-    i32 j;
-
-    for(i32 i = 0; i < size; i++)
-        indexes[i] = &array[i];
-
-    for(i32 i = 0; i < size; i++){
-        v = indexes[i];
-        j = i;
-
-        while(*indexes[j-1] > *v){
-            indexes[j] = indexes[j-1];
-            j--;
-        }
-        indexes[j] = v;
-    }
-}
-
-/* ******************************************************************************** */
-
 void insitu(i32 array[], i32 indexes[], i32 size){
     i32 j;
     i32 k;
@@ -112,6 +91,27 @@ void insitu(i32 array[], i32 indexes[], i32 size){
             } while (k != i);
             indexes[j] = t;
         }
+}
+
+/* ******************************************************************************** */
+
+void insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
+    i32 *v;
+    i32 j;
+
+    for(i32 i = 0; i < size; i++)
+        indexes[i] = &array[i];
+
+    for(i32 i = 0; i < size; i++){
+        v = indexes[i];
+        j = i;
+
+        while(*indexes[j-1] > *v){
+            indexes[j] = indexes[j-1];
+            j--;
+        }
+        indexes[j] = v;
+    }
 }
 
 /* ******************************************************************************** */
