@@ -19,7 +19,12 @@ i32 main(){
     for(int i = 0; i < size; i++)
         indexes[i] = i;
 
-    insertionSortPointers(array, indexes, size);
+    insertionSortLargeRecord(array, indexes, size);
+
+    for(int i = 0; i < size; i++)
+        printf("%d ", array[indexes[i]]);
+
+    putchar(10);
 }
 
 /* ******************************************************************************** */
