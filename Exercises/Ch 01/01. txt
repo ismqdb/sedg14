@@ -1,5 +1,5 @@
-int gcd_mod(int u, int v){
-    int t;
+i32 gcd_mod(i32 u, i32 v){
+    i32 t;
 
     while(u>0){
         if(u<v)

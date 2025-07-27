@@ -1,6 +1,6 @@
-    int s = insertafter('S', head);
-    int l = insertafter('L', head);
-    int a = insertafter('A', head);
+    i32 s = insertafter('S', head);
+    i32 l = insertafter('L', head);
+    i32 a = insertafter('A', head);
 
-    int i = insertafter('I', l);
-    int t = insertafter('T', s);
+    i32 i = insertafter('I', l);
+    i32 t = insertafter('T', s);

@@ -1,19 +1,20 @@
 /* **************************************************************************************************** */
 
 #include <stdlib.h>
+#include <stdint.h>
 
 /* **************************************************************************************************** */
 
-using i8    = int8_t;
-using u8    = u_int8_t;
-using i16   = int16_t;
-using u16   = u_int16_t;
-using u32   = u_int32_t;
-using i32   = int32_t;
-using i64   = int64_t;
-using u64   = u_int64_t;
+typedef int8_t      i8;
+typedef u_int8_t    u8;
+typedef int16_t     i16;
+typedef u_int16_t   u16;
+typedef u_int32_t   u32;
+typedef int32_t     i32;
+typedef int64_t     i64;
+typedef u_int64_t   u64;
 
-using f32   = float;
-using f64   = double;
+typedef float       f32;
+typedef double      f64;
 
 /* **************************************************************************************************** */

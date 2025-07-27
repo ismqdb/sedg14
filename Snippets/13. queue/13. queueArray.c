@@ -4,10 +4,10 @@
 
 /* ******************************************************************************** */
 
-void queueArrayPutInt(struct queueArray *queue, int v){
+void queueArrayPutInt(struct queueArray *queue, i32 v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
-        queue->data.integer = (int*)realloc(queue->data.integer, queue->current_size*sizeof(int));
+        queue->data.integer = (i32*)realloc(queue->data.integer, queue->current_size*sizeof(i32));
     }
     queue->data.integer[queue->tail++] = v;
 }
@@ -34,8 +34,8 @@ void queueArrayPutTreeNodeRS(struct queueArray *queue, struct treeNodeRS *v){
 
 /* ******************************************************************************** */
 
-int queueArrayGetInt(struct queueArray *queue){
-    int t = queue->data.integer[queue->head++];
+i32 queueArrayGetInt(struct queueArray *queue){
+    i32 t = queue->data.integer[queue->head++];
     if(queue->head == queue->tail){
         queue->head = 0;
         queue->tail = 0;
@@ -67,7 +67,7 @@ struct treeNodeRS* queueArrayGetTreeNodeRS(struct queueArray *queue){
 
 /* ******************************************************************************** */
 
-struct queueArray queueArrayInit(treeNodeDataType type, int size){
+struct queueArray queueArrayInit(treeNodeDataType type, i32 size){
     struct queueArray queue;
     queue.chunk_size = 25;
     queue.current_size = 0;
@@ -77,7 +77,7 @@ struct queueArray queueArrayInit(treeNodeDataType type, int size){
 
     switch(type){
         case INT:
-            queue.data.integer = (int*)malloc(queue.current_size*sizeof(int));
+            queue.data.integer = (i32*)malloc(queue.current_size*sizeof(i32));
         break;
 
         case TREE_NODE:
@@ -96,7 +96,7 @@ struct queueArray queueArrayInit(treeNodeDataType type, int size){
 
 /* ******************************************************************************** */
 
-int queueArrayIsEmpty(struct queueArray *queue){
+i32 queueArrayIsEmpty(struct queueArray *queue){
     return queue->head == queue->tail;
 }
 

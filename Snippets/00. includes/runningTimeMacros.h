@@ -2,12 +2,12 @@
 
 #define runningTime(function, result) do { \
     clock_t t; \
-    double sec;\
+    f64 sec;\
     \
     t = clock(); \
     \
     function; \
-    sec = ((double)(clock() - t)) / CLOCKS_PER_SEC; \
+    sec = ((f64)(clock() - t)) / CLOCKS_PER_SEC; \
     result = sec; \
     } \
     while(0)

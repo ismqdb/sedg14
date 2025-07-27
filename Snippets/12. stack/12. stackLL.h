@@ -26,14 +26,14 @@ void stackLLDeinit();
 
 /* ******************************************************************************** */
 
-void stackLLPushInt(struct stackLL*, int);
+void stackLLPushInt(struct stackLL*, i32);
 
 /* ******************************************************************************** */
 
-int stackLLPopInt(struct stackLL*);
+i32 stackLLPopInt(struct stackLL*);
 
 /* ******************************************************************************** */
 
-int stackLLIsEmpty(struct stackLL*);
+i32 stackLLIsEmpty(struct stackLL*);
 
 /* ******************************************************************************** */

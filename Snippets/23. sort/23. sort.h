@@ -9,17 +9,17 @@
 
 /* ******************************************************************************** */
 
-
+#include "../00. includes/standardTypes.h"
 
 /* ******************************************************************************** */
 
-void bubbleSort(int[], int);
-void selectionSort(int[], int);
+void bubbleSort(i32[], i32);
+void selectionSort(i32[], i32);
 
-void insertionSort(int[], int);
-void insertionSortLargeRecord(int[], int[], int);
-void insertionSortPointers(int[], int*[], int);
+void insertionSort(i32[], i32);
+void insertionSortLargeRecord(i32[], i32[], i32);
+void insertionSortPointers(i32[], i32*[], i32);
 
-void insitu(int[], int[], int);
+void insitu(i32[], i32[], i32);
 
 /* ******************************************************************************** */

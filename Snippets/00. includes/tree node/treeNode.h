@@ -14,7 +14,7 @@
 /* ******************************************************************************** */
 
 struct treeNode {
-    char info;
+    u8 info;
     struct treeNode* left;
     struct treeNode* right;
 };
@@ -23,13 +23,13 @@ struct treeNode {
 
 struct tnodePair {
     struct treeNode *node;
-    int index;
+    i32 index;
 };
 
 /* ******************************************************************************** */
 
 struct treeNode* treeNodeInit();
-struct treeNode* treeNodeInitChar(char);
+struct treeNode* treeNodeInitChar(u8);
 
 /* ******************************************************************************** */
 
@@ -37,10 +37,10 @@ void treeNodeDeinit(struct treeNode*);
 
 /* ******************************************************************************** */
 
-int binaryTreeDrawRecursive(struct treeNode*, struct tnodePair**, int, int);
-void externalPathLenTreeNode(struct treeNode*, int, int*);
-int binaryTreeDrawRecursiveDriver();
+i32 binaryTreeDrawRecursive(struct treeNode*, struct tnodePair**, i32, i32);
+void externalPathLenTreeNode(struct treeNode*, i32, i32*);
+i32 binaryTreeDrawRecursiveDriver();
 void visitTreeNode(struct treeNode*);
-int tnodeCompare(const void*, const void*);
+i32 tnodeCompare(const void*, const void*);
 
 /* ******************************************************************************** */

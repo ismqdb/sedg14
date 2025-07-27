@@ -4,26 +4,26 @@
 
 /* ******************************************************************************** */
 
-int massSuicideArray(int n, int m){
+i32 massSuicideArray(i32 n, i32 m){
     if(n <= 0 || m <= 0)
         return -1;
 
     if(n<m)
         return -1;
 
-    int *array = (int*)malloc(n*sizeof(int));
+    i32 *array = (i32*)malloc(n*sizeof(i32));
 
-    int noOfDead = 0;
-    int currentCount;
+    i32 noOfDead = 0;
+    i32 currentCount;
 
-    for(int i = 0; i < n; i++)
+    for(i32 i = 0; i < n; i++)
         array[i] = 1;
 
-    int i = 0;
+    i32 i = 0;
 
     while(noOfDead < (n-1)){
         currentCount = 0;
-        int idx;
+        i32 idx;
 
         while(1){
             if(currentCount == m){
@@ -41,7 +41,7 @@ int massSuicideArray(int n, int m){
         noOfDead++;
     }
 
-    for(int i = 0; i < n; i++)
+    for(i32 i = 0; i < n; i++)
         if(array[i] == 1){
             free(array);
             putchar(10);
@@ -51,14 +51,14 @@ int massSuicideArray(int n, int m){
 
 /* ******************************************************************************** */
 
-void massSuicideLinkedList(int n, int m){
+void massSuicideLinkedList(i32 n, i32 m){
     if(n <= 0 || m <= 0)
         return;
 
     if(n<m)
         return;
 
-    int i;
+    i32 i;
     struct node *head;
 
     struct node *t = nodeAlloc();
@@ -87,8 +87,8 @@ void massSuicideLinkedList(int n, int m){
 
 /* ******************************************************************************** */
 
-void massSuicideRecursiveDriver(int n, int m){
-    int i;
+void massSuicideRecursiveDriver(i32 n, i32 m){
+    i32 i;
     struct node *head;
 
     struct node *t = nodeAlloc();
@@ -108,11 +108,11 @@ void massSuicideRecursiveDriver(int n, int m){
 
 /* ******************************************************************************** */
 
-int massSuicideRecursive(struct node *t, int m){
+i32 massSuicideRecursive(struct node *t, i32 m){
     if(t != t->next){
         struct node *head;
 
-        for(int i = 0; i < (m-1); i++)
+        for(i32 i = 0; i < (m-1); i++)
             t = t->next;
             
         printf("%d ", t->next->key);

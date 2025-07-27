@@ -15,18 +15,18 @@
 
 struct stackPA {
     struct node **keyArray;
-    int *next;
-    int current, head, tail;
+    i32 *next;
+    i32 current, head, tail;
 };
 
 /* ******************************************************************************** */
 
-struct stackPA stackPAInit(int);
+struct stackPA stackPAInit(i32);
 void stackPADeinit(struct stackPA*);
 
 /* ******************************************************************************** */
 
-void stackPAPushInt(struct stackPA*, int);
+void stackPAPushInt(struct stackPA*, i32);
 
 /* ******************************************************************************** */
 
@@ -34,6 +34,6 @@ struct node* stackPAPopNode(struct stackPA*);
 
 /* ******************************************************************************** */
 
-int stackPAIsEmpty(struct stackPA*);
+i32 stackPAIsEmpty(struct stackPA*);
 
 /* ******************************************************************************** */

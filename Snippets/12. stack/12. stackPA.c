@@ -4,11 +4,11 @@
 
 /* ******************************************************************************** */
 
-struct stackPA stackPAInit(int size){
+struct stackPA stackPAInit(i32 size){
     struct stackPA stack;
 
     stack.keyArray = malloc(size*sizeof(struct node*));
-    stack.next = (int*)malloc(size*sizeof(int));
+    stack.next = (i32*)malloc(size*sizeof(i32));
 
     stack.head = 0;
     stack.tail = 1;
@@ -22,7 +22,7 @@ struct stackPA stackPAInit(int size){
 
 /* ******************************************************************************** */
 
-void stackPAPushInt(struct stackPA *stack, int v){
+void stackPAPushInt(struct stackPA *stack, i32 v){
     struct node *new = nodeAllocInt(v);
     stack->keyArray[stack->current] = new;
 
@@ -34,7 +34,7 @@ void stackPAPushInt(struct stackPA *stack, int v){
 
 /* ******************************************************************************** */
 
-int stackPAIsEmpty(struct stackPA *stack){
+i32 stackPAIsEmpty(struct stackPA *stack){
     return stack->current == 2;
 }
 

@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-struct point makePoint(int x, int y){
+struct point makePoint(i32 x, i32 y){
     assert(x >= 0);
     assert(y >= 0);
 
@@ -14,7 +14,7 @@ struct point makePoint(int x, int y){
 
 /* ******************************************************************************** */
 
-int isSamePoint(struct point *pt1, struct point *pt2){
+i32 isSamePoint(struct point *pt1, struct point *pt2){
     return pt1->x == pt2->x && pt1->y == pt2->y;
 }
 

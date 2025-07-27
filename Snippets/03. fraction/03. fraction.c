@@ -4,8 +4,8 @@
 
 /* ******************************************************************************** */
 
-static void swap(int *x, int *y){
-    int z;
+static void swap(i32 *x, i32 *y){
+    i32 z;
 
     z = *x;
     *x = *y;
@@ -14,8 +14,8 @@ static void swap(int *x, int *y){
 
 /* ******************************************************************************** */
 
-static int gcdMod(int u, int v){
-    int t;
+static i32 gcdMod(i32 u, i32 v){
+    i32 t;
 
     u = abs(u);
     v = abs(v);
@@ -30,8 +30,8 @@ static int gcdMod(int u, int v){
 
 /* ******************************************************************************** */
 
-fraction reduce(fraction x){
-    int gcd = gcdMod(x.numerator, x.denominator);
+struct fraction reduce(struct fraction x){
+    i32 gcd = gcdMod(x.numerator, x.denominator);
 
     x.numerator /= gcd;
     x.denominator /= gcd;

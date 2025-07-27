@@ -5,25 +5,25 @@
 /* ******************************************************************************** */
 
 struct array getPostfix(){
-    char c;
+    u8 c;
     struct stackLL stack = stackLLInit();
 
     struct array array = createArray(INT);
 
     while(1){
-        int readResult = scanf("%1c", &c);
+        i32 readResult = scanf("%1c", &c);
         if(readResult == EOF || c == '\n')
             break;
 
         if(c == ')'){
-            insertInt(&array, (char)stackLLPopInt(&stack));
+            insertInt(&array, (u8)stackLLPopInt(&stack));
         }
 
         if(c == '+')
-            stackLLPushInt(&stack, (int)c);
+            stackLLPushInt(&stack, (i32)c);
 
         if(c == '*')
-            stackLLPushInt(&stack, (int)c);
+            stackLLPushInt(&stack, (i32)c);
 
         while(c >= '0' && c <= '9'){
             insertInt(&array, c);
@@ -36,7 +36,7 @@ struct array getPostfix(){
     }
 
     while(!stackLLIsEmpty(&stack))
-        insertInt(&array, (char)stackLLPopInt(&stack));
+        insertInt(&array, (u8)stackLLPopInt(&stack));
 
     //printf("\n");
     return array;
@@ -44,13 +44,13 @@ struct array getPostfix(){
 
 /* ******************************************************************************** */
 
-int evaluate(struct array *array){
-    char c;
-    int x;
-    int sum = 0;
+i32 evaluate(struct array *array){
+    u8 c;
+    i32 x;
+    i32 sum = 0;
 
     struct stackLL stack = stackLLInit();
-    for(int i = 0; i < array->currentSize; i++){
+    for(i32 i = 0; i < array->currentSize; i++){
         c = array->data.ints[i];
 
         if(c == ' ')

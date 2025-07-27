@@ -4,21 +4,21 @@
 
 /* ******************************************************************************** */
 
-int convert(){
-   char c;
+i32 convert(){
+   u8 c;
    unsigned long long value = 0;
-   int pow = 1;
+   i32 pow = 1;
 
-   int chunk = 5;
-   int currentSize = 0;
+   i32 chunk = 5;
+   i32 currentSize = 0;
 
-   char* ptr = (char*)malloc(chunk);
+   u8* ptr = (u8*)malloc(chunk);
    currentSize = chunk;
-   int i;
+   i32 i;
 
    for(i = 0; i < currentSize; i++){
       if(i == (currentSize-1)){
-         ptr = (char*)realloc(ptr, currentSize+chunk);
+         ptr = (u8*)realloc(ptr, currentSize+chunk);
          currentSize += chunk;
       }
 

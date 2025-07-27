@@ -26,7 +26,7 @@ void listDLDeinit(struct listDL *list){
 
 /* ******************************************************************************** */
 
-struct nodeDLL* listDLInsertAfter(struct nodeDLL *node, int value){
+struct nodeDLL* listDLInsertAfter(struct nodeDLL *node, i32 value){
     struct nodeDLL *new = nodeDLLAlloc();
     new->key = value;
 

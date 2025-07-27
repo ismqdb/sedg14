@@ -9,18 +9,22 @@
 
 /* ******************************************************************************** */
 
-typedef struct fraction {
-    int numerator;
-    int denominator;
+#include "../00. includes/standardTypes.h"
+
+/* ******************************************************************************** */
+
+struct fraction {
+    i32 numerator;
+    i32 denominator;
 } fraction;
 
 /* ******************************************************************************** */
 
-static void swap(int*, int*);
-static int gcdMod(int, int);
+static void swap(i32*, i32*);
+static i32 gcdMod(i32, i32);
 
 /* ******************************************************************************** */
 
-fraction reduce(fraction);
+struct fraction reduce(struct fraction);
 
 /* ******************************************************************************** */

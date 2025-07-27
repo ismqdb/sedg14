@@ -72,8 +72,6 @@
         "chrono": "cpp",
         "iomanip": "cpp",
         "sstream": "cpp",
-        "cinttypes": "cpp",
-        "standardtypes.h": "c",
-        "stdint.h": "c"
+        "cinttypes": "cpp"
     }
 }

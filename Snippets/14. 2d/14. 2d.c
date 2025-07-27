@@ -4,12 +4,12 @@
 
 /* ******************************************************************************** */
 
-int twoD(){
+i32 twoD(){
     #define size 5
-    int array[size][size] = {0};
+    i32 array[size][size] = {0};
 
-    for(int i = 1; i < size; i++)
-        for(int j = 1; j < size; j++)
+    for(i32 i = 1; i < size; i++)
+        for(i32 j = 1; j < size; j++)
             if(gcd(i, j) == 1)
                 array[i][j] = 1;
             else

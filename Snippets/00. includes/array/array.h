@@ -12,6 +12,7 @@
 
 #include "../treeNodeDataType.h"
 #include "../allocMacros.h"
+#include "../standardTypes.h"
 
 /* ******************************************************************************** */
 
@@ -19,19 +20,19 @@ struct array {
     treeNodeDataType type;
 
     union {
-        int *ints;
+        i32* ints;
     } data;
 
-    int currentSize;
-    int allocatedSize;
-    int blockSize;
+    i32 currentSize;
+    i32 allocatedSize;
+    i32 blockSize;
 };
 
 /* ******************************************************************************** */
 
 struct array createArray(treeNodeDataType);
 void destroyArray(struct array*);
-int insertInt(struct array*, int);
+i32 insertInt(struct array*, i32);
 
 /* ******************************************************************************** */
 

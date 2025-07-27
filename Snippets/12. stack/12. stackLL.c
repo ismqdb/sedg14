@@ -19,7 +19,7 @@ struct stackLL stackLLInit(){
 
 /* ******************************************************************************** */
 
-void stackLLPushInt(struct stackLL *stack, int v){
+void stackLLPushInt(struct stackLL *stack, i32 v){
     struct node *t = nodeAlloc();
     t->key = v;
     t->next = stack->head->next;
@@ -28,8 +28,8 @@ void stackLLPushInt(struct stackLL *stack, int v){
 
 /* ******************************************************************************** */
 
-int stackLLPopInt(struct stackLL *stack){
-    int x;
+i32 stackLLPopInt(struct stackLL *stack){
+    i32 x;
     struct node *t = stack->head->next;
     stack->head->next = t->next;
     x = t->key;
@@ -39,7 +39,7 @@ int stackLLPopInt(struct stackLL *stack){
 
 /* ******************************************************************************** */
 
-int stackLLIsEmpty(struct stackLL *stack){
+i32 stackLLIsEmpty(struct stackLL *stack){
     return stack->head->next == stack->tail;
 }
 

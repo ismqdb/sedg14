@@ -10,7 +10,7 @@ struct node* nodeAlloc(){
 
 /* ******************************************************************************** */
 
-struct node* nodeAllocInt(int value){
+struct node* nodeAllocInt(i32 value){
     struct node *n = (struct node*)malloc(sizeof(struct node*));
     n->key = value;
     return n;

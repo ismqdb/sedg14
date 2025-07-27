@@ -9,23 +9,27 @@
 
 /* ******************************************************************************** */
 
+#include "../00. includes/standardTypes.h"
+
+/* ******************************************************************************** */
+
 struct parray {
-    char *key;
-    char *next;
-    int current;
-    int head;
-    int tail; 
+    u8 *key;
+    u8 *next;
+    i32 current;
+    i32 head;
+    i32 tail; 
 };
 
 /* ******************************************************************************** */
 
-struct parray parrayInit(int);
+struct parray parrayInit(i32);
 void parrayDeinit(struct parray*);
 
 /* ******************************************************************************** */
 
-void parrayDeleteNext(struct parray*, char);
-char parrayInsertAfter(struct parray*, char, char);
+void parrayDeleteNext(struct parray*, u8);
+u8 parrayInsertAfter(struct parray*, u8, u8);
 void parrayPrintAll(struct parray*);
 
 /* ******************************************************************************** */

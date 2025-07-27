@@ -11,6 +11,7 @@
 
 /* ******************************************************************************** */
 
+#include "../standardTypes.h"
 #include "../../12. stack/12. stackArray.h"
 #include "../../13. queue/13. queueArray.h"
 

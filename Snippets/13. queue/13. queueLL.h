@@ -23,7 +23,7 @@ struct queueLL queueLLInit();
 
 /* ******************************************************************************** */
 
-void queueLLPutInt(struct queueLL*, int);
+void queueLLPutInt(struct queueLL*, i32);
 
 /* ******************************************************************************** */
 
@@ -31,6 +31,6 @@ struct node* queueLLGetNode(struct queueLL*);
 
 /* ******************************************************************************** */
 
-int queueLLIsEmpty(struct queueLL*);
+i32 queueLLIsEmpty(struct queueLL*);
 
 /* ******************************************************************************** */

@@ -4,11 +4,11 @@
 
 /* ******************************************************************************** */
 
-void bubbleSort(int array[], int size){
-    int temp;
+void bubbleSort(i32 array[], i32 size){
+    i32 temp;
 
-    for(int i = size; i >= 1; i--)
-        for(int j = 0; j <= i; j++)
+    for(i32 i = size; i >= 1; i--)
+        for(i32 j = 0; j <= i; j++)
             if(array[j-1] > array[j]){
                 temp = array[j-1];
                 array[j-1] = array[j];
@@ -18,14 +18,14 @@ void bubbleSort(int array[], int size){
 
 /* ******************************************************************************** */
 
-void selectionSort(int array[], int size){
-    int min;
-    int temp;
+void selectionSort(i32 array[], i32 size){
+    i32 min;
+    i32 temp;
 
-    for(int i = 0; i < size; i++){
+    for(i32 i = 0; i < size; i++){
         min = i;
 
-        for(int k = i; k < size; k++)
+        for(i32 k = i; k < size; k++)
             if(array[k] < array[min])
                 min = k;
 
@@ -37,10 +37,10 @@ void selectionSort(int array[], int size){
 
 /* ******************************************************************************** */
 
-void insertionSort(int array[], int size){
-    for(int i = 1; i < size; i++){
-        int k = i;
-        int temp = array[k];
+void insertionSort(i32 array[], i32 size){
+    for(i32 i = 1; i < size; i++){
+        i32 k = i;
+        i32 temp = array[k];
 
         while(temp < array[k-1]){
             array[k] = array[k-1];
@@ -52,14 +52,14 @@ void insertionSort(int array[], int size){
 
 /* ******************************************************************************** */
 
-void insertionSortLargeRecord(int array[], int indexes[], int size){
-    int v;
-    int j;
+void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
+    i32 v;
+    i32 j;
 
-    for(int i = 0; i < size; i++)
+    for(i32 i = 0; i < size; i++)
         indexes[i] = i;
 
-    for(int i = 0; i < size; i++){
+    for(i32 i = 0; i < size; i++){
         v = indexes[i];
         j = i;
 
@@ -73,14 +73,14 @@ void insertionSortLargeRecord(int array[], int indexes[], int size){
 
 /* ******************************************************************************** */
 
-void insertionSortPointers(int array[], int *indexes[], int size){
-    int *v;
-    int j;
+void insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
+    i32 *v;
+    i32 j;
 
-    for(int i = 0; i < size; i++)
+    for(i32 i = 0; i < size; i++)
         indexes[i] = &array[i];
 
-    for(int i = 0; i < size; i++){
+    for(i32 i = 0; i < size; i++){
         v = indexes[i];
         j = i;
 
@@ -94,12 +94,12 @@ void insertionSortPointers(int array[], int *indexes[], int size){
 
 /* ******************************************************************************** */
 
-void insitu(int array[], int indexes[], int size){
-    int j;
-    int k;
-    int t;
+void insitu(i32 array[], i32 indexes[], i32 size){
+    i32 j;
+    i32 k;
+    i32 t;
 
-    for(int i = 0; i < size; i++)
+    for(i32 i = 0; i < size; i++)
         if(indexes[i] != i){
             t = indexes[i];
             k = i;

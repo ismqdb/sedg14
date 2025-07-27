@@ -20,12 +20,12 @@
 struct stackArray {
     treeNodeDataType type;
     union {
-        int* integer;
+        i32* integer;
         struct treeNode** treeNode;
     } data;
-    int p;
-    int currentSize;
-    int chunkSize;
+    i32 p;
+    i32 currentSize;
+    i32 chunkSize;
 
     pthread_mutex_t dataMutex;
     pthread_mutex_t ptrMutex;
@@ -34,22 +34,22 @@ struct stackArray {
 
 /* ******************************************************************************** */
 
-void stackArrayPushInt(struct stackArray*, int);
+void stackArrayPushInt(struct stackArray*, i32);
 void stackArrayPushTreeNode(struct stackArray*, struct treeNode*);
 
 /* ******************************************************************************** */
 
-int stackArrayPopInt(struct stackArray*);
+i32 stackArrayPopInt(struct stackArray*);
 struct treeNode* stackArrayPopTreeNode(struct stackArray*);
 
 /* ******************************************************************************** */
 
-struct stackArray stackArrayInit(treeNodeDataType, int);
+struct stackArray stackArrayInit(treeNodeDataType, i32);
 void stackArrayDeinit(struct stackArray*);
 
 /* ******************************************************************************** */
 
-int stackArrayIsEmpty(struct stackArray*);
-int stackArraySize(struct stackArray*);
+i32 stackArrayIsEmpty(struct stackArray*);
+i32 stackArraySize(struct stackArray*);
 
 /* ******************************************************************************** */

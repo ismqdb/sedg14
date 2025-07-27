@@ -10,7 +10,7 @@ void treeNodeRSVisit(struct treeNodeRS *node){
 
 /* ******************************************************************************** */
 
-struct treeNodeRS* createNode(int value){
+struct treeNodeRS* createNode(i32 value){
     struct treeNodeRS *t = malloc(sizeof(struct treeNodeRS));
     t->value.integer = value;
     return t;
@@ -18,7 +18,7 @@ struct treeNodeRS* createNode(int value){
 
 /* ******************************************************************************** */
 
-struct treeNodeRS* insertChild(struct treeNodeRS* node, int value){
+struct treeNodeRS* insertChild(struct treeNodeRS* node, i32 value){
     struct treeNodeRS *x = createNode(value);
     node->child = x;
     return x;
@@ -26,7 +26,7 @@ struct treeNodeRS* insertChild(struct treeNodeRS* node, int value){
 
 /* ******************************************************************************** */
 
-struct treeNodeRS* insertSibling(struct treeNodeRS *parent, struct treeNodeRS *node, int value){
+struct treeNodeRS* insertSibling(struct treeNodeRS *parent, struct treeNodeRS *node, i32 value){
     struct treeNodeRS *x = createNode(value);
 
     struct treeNodeRS *it = node;
@@ -77,7 +77,7 @@ void treeNodeRSLevelOrderTraversal(struct treeNodeRS *node){
 
 /* ******************************************************************************** */
 
-void treeNodeRSExternalPathLen(struct treeNodeRS *t, int level, int *result){
+void treeNodeRSExternalPathLen(struct treeNodeRS *t, i32 level, i32 *result){
     if(!t) return;
 
     if(t->child || t->sibling)

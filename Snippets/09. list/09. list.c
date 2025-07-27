@@ -26,7 +26,7 @@ void listDeleteNext(struct node *t){
 
 /* ******************************************************************************** */
 
-struct node* listInsertAfter(int v, struct node *t){
+struct node* listInsertAfter(i32 v, struct node *t){
     if(t == NULL)
         return NULL;
 

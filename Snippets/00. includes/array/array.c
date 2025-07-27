@@ -13,7 +13,7 @@ struct array createArray(treeNodeDataType type){
     
     switch(type){
         case INT:
-            a.data.ints = heapAllocSized(int, a.currentSize);
+            a.data.ints = heapAllocSized(i32, a.currentSize);
         break;
     }
 
@@ -34,10 +34,10 @@ void destroyArray(struct array *a){
 
 /* ******************************************************************************** */
 
-int insertInt(struct array *a, int value){
+i32 insertInt(struct array *a, i32 value){
     if(a->currentSize == a->allocatedSize){
         a->allocatedSize += 25;
-        a->data.ints = heapRealloc(int, a->data.ints, a->allocatedSize);
+        a->data.ints = heapRealloc(i32, a->data.ints, a->allocatedSize);
     }
     a->data.ints[a->currentSize] = value;
     a->currentSize++;

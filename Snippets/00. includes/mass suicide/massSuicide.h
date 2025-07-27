@@ -10,13 +10,14 @@
 /* ******************************************************************************** */
 
 #include "../node/node.h"
+#include "../standardTypes.h"
 
 /* ******************************************************************************** */
 
-int massSuicideArray(int, int);
-void massSuicideLinkedList(int, int);
+i32 massSuicideArray(i32, i32);
+void massSuicideLinkedList(i32, i32);
 
-void massSuicideRecursiveDriver(int, int);
-int massSuicideRecursive(struct node*, int);
+void massSuicideRecursiveDriver(i32, i32);
+i32 massSuicideRecursive(struct node*, i32);
 
 /* ******************************************************************************** */

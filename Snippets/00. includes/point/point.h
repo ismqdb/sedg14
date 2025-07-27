@@ -12,15 +12,19 @@
 
 /* ******************************************************************************** */
 
+#include "../standardTypes.h"
+
+/* ******************************************************************************** */
+
 struct point {
-    int x;
-    int y;
+    i32 x;
+    i32 y;
 };
 
 /* ******************************************************************************** */
 
-struct point makePoint(int x, int y);
-int isSamePoint(struct point*, struct point*);
+struct point makePoint(i32 x, i32 y);
+i32 isSamePoint(struct point*, struct point*);
 struct point *middlePoint(struct point*, struct point*);
 void drawPoint(struct point*);
 void lineSegment(struct point*, struct point*);

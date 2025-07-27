@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-struct stackArray stackArrayInit(treeNodeDataType type, int size){
+struct stackArray stackArrayInit(treeNodeDataType type, i32 size){
     struct stackArray stack;
     stack.currentSize = 0;
     stack.chunkSize = 25;
@@ -12,7 +12,7 @@ struct stackArray stackArrayInit(treeNodeDataType type, int size){
 
     switch(type){
         case INT:
-            stack.data.integer = heapAllocSized(int, size);
+            stack.data.integer = heapAllocSized(i32, size);
             break;
         case TREE_NODE:
             stack.data.treeNode = heapAllocArray(struct treeNode, size);
@@ -49,10 +49,10 @@ void stackArrayDeinit(struct stackArray *stack){
 
 /* ******************************************************************************** */
 
-void stackArrayPushInt(struct stackArray *stack, int v){
+void stackArrayPushInt(struct stackArray *stack, i32 v){
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
-        heapRealloc(int, stack->data.integer, stack->currentSize);
+        heapRealloc(i32, stack->data.integer, stack->currentSize);
     }
 
     pthread_mutex_lock(&stack->dataMutex);
@@ -77,13 +77,13 @@ void stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
 
 /* ******************************************************************************** */
 
-int stackArrayPopInt(struct stackArray *stack){
+i32 stackArrayPopInt(struct stackArray *stack){
     pthread_mutex_lock(&stack->dataMutex);
 
     if(stackArrayIsEmpty(stack))
         pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
 
-    int value = stack->data.integer[--stack->p];
+    i32 value = stack->data.integer[--stack->p];
     pthread_mutex_unlock(&stack->dataMutex);
 
     return value;
@@ -105,9 +105,9 @@ struct treeNode* stackArrayPopTreeNode(struct stackArray *stack){
 
 /* ******************************************************************************** */
 
-int stackArrayIsEmpty(struct stackArray *stack){
+i32 stackArrayIsEmpty(struct stackArray *stack){
     pthread_mutex_lock(&stack->ptrMutex);
-    int empty = !stack->p;
+    i32 empty = !stack->p;
     pthread_mutex_unlock(&stack->ptrMutex);
 
     return empty;
@@ -115,9 +115,9 @@ int stackArrayIsEmpty(struct stackArray *stack){
 
 /* ******************************************************************************** */
 
-int stackArraySize(struct stackArray *stack){
+i32 stackArraySize(struct stackArray *stack){
     pthread_mutex_lock(&stack->dataMutex);
-    int size = stack->p > 0 ? stack->p - 1 : 0;
+    i32 size = stack->p > 0 ? stack->p - 1 : 0;
     pthread_mutex_unlock(&stack->dataMutex);
 
     return size;

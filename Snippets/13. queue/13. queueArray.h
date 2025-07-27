@@ -17,35 +17,35 @@
 struct queueArray {
     treeNodeDataType type;
     union {
-        int* integer;
+        i32* integer;
         struct treeNode **treeNode;
         struct treeNodeRS **tree_node_rs;
     } data;
-    int head;
-    int tail;
-    int chunk_size;
-    int current_size;
+    i32 head;
+    i32 tail;
+    i32 chunk_size;
+    i32 current_size;
 };
 
 /* ******************************************************************************** */
 
-void queueArrayPutInt(struct queueArray*, int);
+void queueArrayPutInt(struct queueArray*, i32);
 void queueArrayPutTreeNode(struct queueArray*, struct treeNode*);
 void queueArrayPutTreeNodeRS(struct queueArray*, struct treeNodeRS*);
 
 /* ******************************************************************************** */
 
-int queueArrayGetInt(struct queueArray*);
+i32 queueArrayGetInt(struct queueArray*);
 struct treeNode* queueArrayGetTreeNode(struct queueArray*);
 struct treeNodeRS* queueArrayGetTreeNodeRS(struct queueArray*);
 
 /* ******************************************************************************** */
 
-struct queueArray queueArrayInit(treeNodeDataType, int);
+struct queueArray queueArrayInit(treeNodeDataType, i32);
 void queueArrayDeinit(struct queueArray*);
 
 /* ******************************************************************************** */
 
-int queueArrayIsEmpty(struct queueArray*);
+i32 queueArrayIsEmpty(struct queueArray*);
 
 /* ******************************************************************************** */

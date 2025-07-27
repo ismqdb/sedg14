@@ -2,16 +2,20 @@
 
 #pragma once
 
-#include <stdio.h>
-#include "../../13. queue/13. queueArray.h"
+/* ******************************************************************************** */
 
+#include <stdio.h>
+
+/* ******************************************************************************** */
+
+#include "../../13. queue/13. queueArray.h"
 #include "../parse tree/parseTree.h"
 
 /* ******************************************************************************** */
 
 struct treeNodeRS {
     union {
-        int integer;
+        i32 integer;
     } value;
 
     struct treeNodeRS *child;
@@ -21,14 +25,14 @@ struct treeNodeRS {
 
 /* ******************************************************************************** */
 
-struct treeNodeRS* createNode(int);
-struct treeNodeRS* insertChild(struct treeNodeRS*, int);
-struct treeNodeRS* insertSibling(struct treeNodeRS*, struct treeNodeRS*, int);
+struct treeNodeRS* createNode(i32);
+struct treeNodeRS* insertChild(struct treeNodeRS*, i32);
+struct treeNodeRS* insertSibling(struct treeNodeRS*, struct treeNodeRS*, i32);
 
 /* ******************************************************************************** */
 
 void treeNodeRSLevelOrderTraversal(struct treeNodeRS*);
-void treeNodeRSExternalPathLen(struct treeNodeRS*, int, int*);
+void treeNodeRSExternalPathLen(struct treeNodeRS*, i32, i32*);
 
 /* ******************************************************************************** */
 

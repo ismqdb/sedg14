@@ -4,14 +4,14 @@
 
 /* ******************************************************************************** */
 
-int binary(int num){
-   int *ptr = (int*)malloc(sizeof(int));
-   int currentSize = 1;
-   for(int i = 0; num>0; i++){
+i32 binary(i32 num){
+   i32 *ptr = (i32*)malloc(sizeof(i32));
+   i32 currentSize = 1;
+   for(i32 i = 0; num>0; i++){
       *(ptr+i) = num%2;
       num/=2;
       currentSize++;
-      ptr = (int*)realloc(ptr, currentSize*sizeof(int));
+      ptr = (i32*)realloc(ptr, currentSize*sizeof(i32));
    }
    currentSize--;
 

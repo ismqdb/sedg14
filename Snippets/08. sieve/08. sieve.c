@@ -4,12 +4,12 @@
 
 /* ******************************************************************************** */
 
-int sieve(int size){
+i32 sieve(i32 size){
     assert(size >= 2);
 
-    int i,j;
+    i32 i,j;
     
-    int* a = (int*)malloc(size*sizeof(int));
+    i32* a = (i32*)malloc(size*sizeof(i32));
 
     for(a[1]=0, i=2; i<size; i++)
         a[i]=1;
@@ -21,7 +21,7 @@ int sieve(int size){
 
     for(i = 1; i < size; i++)
         if(a[i]){
-            int result = a[i];
+            i32 result = a[i];
             free(a);
             return result;
         }
@@ -29,13 +29,13 @@ int sieve(int size){
 
 /* ******************************************************************************** */
 
-int sieveUnbounded(){
+i32 sieveUnbounded(){
     unsigned long long i;
     unsigned long long j;
 
     size_t size = 30000000;
 
-    int vec[(int)pow(10, 9)];
+    i32 vec[(i32)pow(10, 9)];
 
     for(vec[1] = 0, i = 2; i < size; i++)
         vec[i] = 1;
@@ -45,7 +45,7 @@ int sieveUnbounded(){
             if((i * j) < size)
                 vec[i * j] = 0;
 
-    int biggestIdx = 0;
+    i32 biggestIdx = 0;
 
     for(i = 1; i < size; i++)
         if(vec[i])
@@ -56,24 +56,24 @@ int sieveUnbounded(){
 
 /* ******************************************************************************** */
 
-int sieveOptimized(){
+i32 sieveOptimized(){
     unsigned long long i;
     unsigned long long j;
 
     size_t n = 340000000;
 
-    int lp[n+1];
-    int pr[n+1];
+    i32 lp[n+1];
+    i32 pr[n+1];
 
-    int prCurrent = 0;
+    i32 prCurrent = 0;
 
-    for (int i=2; i <= n; ++i) {
+    for (i32 i=2; i <= n; ++i) {
         if (lp[i] == 0) {
             lp[i] = i;
             pr[prCurrent++] = i;
         }
 
-        for (int j = 0; i * pr[j] <= n; ++j) {
+        for (i32 j = 0; i * pr[j] <= n; ++j) {
             lp[i * pr[j]] = pr[j];
             if (pr[j] == lp[i]) {
                 break;
@@ -81,7 +81,7 @@ int sieveOptimized(){
         }
     }
 
-    int biggestIdx = 0;
+    i32 biggestIdx = 0;
 
     for(i = 1; i < n; i++)
         if(lp[i])

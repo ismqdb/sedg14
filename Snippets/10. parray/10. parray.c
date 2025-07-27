@@ -4,11 +4,11 @@
 
 /* ******************************************************************************** */
 
-struct parray parrayInit(int size){
+struct parray parrayInit(i32 size){
     struct parray array;
 
-    array.key = (char*)malloc(size*sizeof(char));
-    array.next = (char*)malloc(size*sizeof(char));
+    array.key = (u8*)malloc(size*sizeof(u8));
+    array.next = (u8*)malloc(size*sizeof(u8));
 
     array.head = 0;
     array.tail = 1;
@@ -29,13 +29,13 @@ void parrayDeinit(struct parray *array){
 
 /* ******************************************************************************** */
 
-void parrayDeleteNext(struct parray *array, char t){
+void parrayDeleteNext(struct parray *array, u8 t){
     array->next[t] = array->next[array->next[t]];
 }
 
 /* ******************************************************************************** */
 
-char parrayInsertAfter(struct parray *array, char newValue, char existing){
+u8 parrayInsertAfter(struct parray *array, u8 newValue, u8 existing){
     array->key[array->current] = newValue;
 
     array->next[array->current] = array->next[existing];
@@ -47,7 +47,7 @@ char parrayInsertAfter(struct parray *array, char newValue, char existing){
 /* ******************************************************************************** */
 
 void parrayPrintAll(struct parray *array){
-    char x = array->next[array->head];
+    u8 x = array->next[array->head];
 
     while(x != array->next[x]){
         printf("%c ", array->key[x]);

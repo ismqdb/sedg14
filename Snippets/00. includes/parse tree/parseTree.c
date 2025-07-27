@@ -6,7 +6,7 @@
 
 struct treeNode* buildParseTree(){
     struct treeNode *x;
-    char c;
+    u8 c;
 
     struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 

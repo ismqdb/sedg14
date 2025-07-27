@@ -20,7 +20,7 @@ void listDLDeinit(struct listDL*);
 
 /* ******************************************************************************** */
 
-struct nodeDLL* listDLInsertAfter(struct nodeDLL*, int);
+struct nodeDLL* listDLInsertAfter(struct nodeDLL*, i32);
 
 /* ******************************************************************************** */
 
