@@ -9,7 +9,6 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/node DLL/nodeDLL.c"
     "Snippets/00. includes/node/node.c"
     "Snippets/00. includes/tree node/treeNode.c"
-    "Snippets/00. includes/tree node RS/treeNodeRS.c"
     "Snippets/00. includes/parse tree/parseTree.c"
     "Snippets/00. includes/mass suicide/massSuicide.c"
     "Snippets/00. includes/postfix/postfix.c"

@@ -10,7 +10,6 @@
 
 #include "../00. includes/treeNodeDataType.h"
 #include "../00. includes/tree node/treeNode.h"
-#include "../00. includes/tree node RS/treeNodeRS.h"
 
 /* ******************************************************************************** */
 
@@ -19,7 +18,6 @@ struct queueArray {
     union {
         i32* integer;
         struct treeNode **treeNode;
-        struct treeNodeRS **tree_node_rs;
     } data;
     i32 head;
     i32 tail;
@@ -31,7 +29,6 @@ struct queueArray {
 
 void queueArrayPutInt(struct queueArray*, i32);
 void queueArrayPutTreeNode(struct queueArray*, struct treeNode*);
-void queueArrayPutTreeNodeRS(struct queueArray*, struct treeNodeRS*);
 
 /* ******************************************************************************** */
 
