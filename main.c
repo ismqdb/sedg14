@@ -14,12 +14,9 @@ i32 main(){
     enum {size = 5};
 
     i32 array[size] = {5, 7, 1, 4, 6};
-    i32 indexes[size];
+    i32 indexes[size] = {2, 3, 0, 4, 1};
 
-    for(int i = 0; i < size; i++)
-        indexes[i] = i;
-
-    insertionSortLargeRecord(array, indexes, size);
+    insitu(array, indexes, size);
 
     for(int i = 0; i < size; i++)
         printf("%d ", array[indexes[i]]);

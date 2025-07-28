@@ -85,7 +85,7 @@ void insitu(i32 array[], i32 indexes[], i32 size){
 
             do {
                 j = k;
-                indexes[j] = array[indexes[j]];
+                array[j] = array[indexes[j]];
                 k = indexes[j];
                 indexes[j] = j;
             } while (k != i);
