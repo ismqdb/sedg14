@@ -80,7 +80,7 @@ void insitu(i32 array[], i32 indexes[], i32 size){
 
     for(i32 i = 0; i < size; i++)
         if(indexes[i] != i){
-            t = indexes[i];
+            t = array[i];
             k = i;
 
             do {
@@ -89,7 +89,7 @@ void insitu(i32 array[], i32 indexes[], i32 size){
                 k = indexes[j];
                 indexes[j] = j;
             } while (k != i);
-            indexes[j] = t;
+            array[j] = t;
         }
 }
 
