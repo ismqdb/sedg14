@@ -11,15 +11,18 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {size = 5};
+    enum {size = 15};
 
-    i32 array[size] = {5, 7, 1, 4, 6};
-    i32 indexes[size] = {2, 3, 0, 4, 1};
+    i32 array[size] = {
+        'A', 'S', 'O', 'R', 'T', 'I', 'N', 'G', 
+        'E', 'X', 'A', 'M', 'P', 'L', 'E'
+    };
+    i32 indexes[size] = {0, 10, 8, 14, 7, 5, 13, 11, 6, 2, 12, 3, 1, 4, 9};
 
     insitu(array, indexes, size);
 
     for(int i = 0; i < size; i++)
-        printf("%d ", array[indexes[i]]);
+        printf("%c ", array[indexes[i]]);
 
     putchar(10);
 }
