@@ -17,12 +17,11 @@ i32 main(){
         'A', 'S', 'O', 'R', 'T', 'I', 'N', 'G', 
         'E', 'X', 'A', 'M', 'P', 'L', 'E'
     };
-    i32 indexes[size] = {0, 10, 8, 14, 7, 5, 13, 11, 6, 2, 12, 3, 1, 4, 9};
 
-    insitu(array, indexes, size);
+    shellSort(array, size);
 
     for(int i = 0; i < size; i++)
-        printf("%c ", array[indexes[i]]);
+        printf("%c ", array[i]);
 
     putchar(10);
 }
