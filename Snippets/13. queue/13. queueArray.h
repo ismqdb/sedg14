@@ -27,7 +27,7 @@ struct queueArray {
 
 /* ******************************************************************************** */
 
-void queueArrayPutInt(struct queueArray*, i32);
+void queueArrayPuvtInt(struct queueArray*, i32);
 void queueArrayPutTreeNode(struct queueArray*, struct treeNode*);
 
 /* ******************************************************************************** */

@@ -38,7 +38,26 @@ void selectionSort(i32 array[], i32 size){
 /* ******************************************************************************** */
 
 void shellSort(i32 array[], i32 size){
+    i32 i;
+    i32 j;
+    i32 h;
+    i32 v;
 
+    for(h = 1; h <= size/9; h = 3*h+1)
+        ;
+
+    for(; h > 0; h /= 3){
+        for(i = h+1; i <= size; i++){
+            v = array[i];
+            j = i;
+
+            while(j>h && array[j-h]>v){
+                array[j] = array[j-h];
+                j -= h;
+            }
+            array[j] = v;
+        }
+    }
 }
 
 /* ******************************************************************************** */
