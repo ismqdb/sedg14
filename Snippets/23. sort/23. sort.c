@@ -47,7 +47,7 @@ void shellSort(i32 array[], i32 size){
         ;
 
     for(; h > 0; h /= 3){
-        for(i = h+1; i <= size; i++){
+        for(i = h; i < size; i++){
             v = array[i];
             j = i;
 
