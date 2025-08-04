@@ -15,6 +15,7 @@
 
 void bubbleSort(i32[], i32);
 void selectionSort(i32[], i32);
+void shellSort(i32[], i32);
 
 void insertionSort(i32[], i32);
 void insertionSortLargeRecord(i32[], i32[], i32);
