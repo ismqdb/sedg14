@@ -7,6 +7,7 @@
 #include <assert.h>
 
 #include "Snippets/23. sort/23. sort.h"
+#include "Snippets/23. sort/23. dcount.h"
 
 /* ******************************************************************************** */
 
@@ -27,19 +28,7 @@ i32 main(){
 
 /* ******************************************************************************** */
 
-    i32 in[size-1];
-    i32 idx[size-1];
-
-    for(int i = 0; i < size-1; i++){
-        in[i] = i;
-        idx[i] = (size-1)-i;
-    }
-
-    for(int i = 0; i < size-1; i++)
-        idx[in[i]] = in[i];
-
-    for(int i = 0; i < size-1; i++)
-        printf("%d ", idx[in[i]]);
+    simpledc(15);
 
     putchar(10);
 }
