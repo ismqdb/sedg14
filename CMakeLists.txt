@@ -52,6 +52,8 @@ add_executable(sedg14 main.c
     "Snippets/23. sort/23. dcount.c"
 )
 
+add_executable(testing test.c)
+
 target_link_libraries(sedg14 m) # Link libmath
 
 #target_compile_options(sedg14 PRIVATE -Wall -Wextra)
