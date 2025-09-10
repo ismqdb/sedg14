@@ -12,15 +12,15 @@ void simpledc(i32 size){
     i32 array[size];
     i32 idx[size];
 
-    for(int i = 0; i < size; i++){
+    for(i32 i = 0; i < size; i++){
         array[i] = i;
         idx[i] = (size-1)-i;
     }
 
-    for(int i = 0; i < size-1; i++)
+    for(i32 i = 0; i < size-1; i++)
         idx[array[i]] = array[i];
 
-    for(int i = 0; i < size-1; i++)
+    for(i32 i = 0; i < size-1; i++)
         printf("%d ", idx[array[i]]);
 }
 
