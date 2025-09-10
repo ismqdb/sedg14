@@ -21,7 +21,7 @@ void simpledc(i32 size){
         idx[array[i]] = array[i];
 
     for(i32 i = 0; i < size-1; i++)
-        printf("%d ", idx[array[i]]);
+        printf("%d ", array[idx[i]]);
 }
 
 /* ******************************************************************************** */
