@@ -37,7 +37,7 @@ void selectionSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-void shellSort(i32 array[], i32 size){
+void shellSort(i8 array[], i32 size){
     i32 i;
     i32 j;
     i32 h;

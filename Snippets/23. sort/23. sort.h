@@ -15,6 +15,6 @@
 
 void bubbleSort(i32[], i32);
 void selectionSort(i32[], i32);
-void shellSort(i32[], i32);
+void shellSort(i8[], i32);
 
 /* ******************************************************************************** */

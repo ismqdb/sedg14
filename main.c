@@ -14,7 +14,7 @@
 i32 main(){
     enum {size = 15};
 
-    i32 array[size] = {
+    i8 array[size] = {
         'A', 'S', 'O', 'R', 'T', 'I', 'N', 'G', 
         'E', 'X', 'A', 'M', 'P', 'L', 'E'
     };
