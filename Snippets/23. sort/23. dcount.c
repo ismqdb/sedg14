@@ -29,29 +29,24 @@ void simpledc(i32 size){
 // N records
 // keys: [0, M-1]
 
-void distrCount(i32 *array, i32 size, i32 maxKeys){
-    i32 count[maxKeys];
-    i32 idx[size];
+void distrCount(i32 *a, i32 N, i32 M){
+    i32 count[M];
+    i32 b[N];
 
-    for(i32 i = 0; i < maxKeys; i++){
+    for(i32 i = 0; i < M; i++)
         count[i] = 0;
-    }
 
-    for(i32 i = 0; i < size; i++){
-        idx[i] = 0;
-    }
+    for(i32 i = 0; i < N; i++)
+        count[a[i]]++;
 
-    for(i32 i = 0; i < size; i++)
-        count[array[i]]++;
-
-    for(i32 i = 0; i < maxKeys-1; i++)
+    for(i32 i = 0; i < M; i++)
         count[i] = count[i-1] + count[i];
 
-    for(i32 i = size-1; i > 0; i--)
-        idx[count[array[i]]--] = array[i];
-
-    for(i32 i = 0; i < size; i++)
-        array[i] = idx[i];
+    for(i32 i = N-1; i > 0; i--)
+        b[count[a[i]]--] = a[i];
+    
+    for(i32 i = 1; i <= N; i++)
+        a[i] = b[i];
 }
 
 /* ******************************************************************************** */
