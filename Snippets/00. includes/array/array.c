@@ -35,7 +35,12 @@ struct array fromRawi32(enum arrayType t, i32 *elems, i32 size){
 
     struct array array = createArray(t);
 
+    while(array.capacity < size)
+        reserve(&array);
+
     memcpy(array.elems.i, elems, size*sizeof(i32));
+    array.size = size;
+
     memset(elems, '\0', size*sizeof(i32));
 
     return array;
@@ -48,7 +53,12 @@ struct array fromRawf32(enum arrayType t, f32 *elems, i32 size){
 
     struct array array = createArray(t);
 
+    while(array.capacity < size)
+        reserve(&array);
+
     memcpy(array.elems.f, elems, size*sizeof(f32));
+    array.size = size;
+
     memset(elems, '\0', size*sizeof(f32));
 
     return array;
