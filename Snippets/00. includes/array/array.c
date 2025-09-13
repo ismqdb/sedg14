@@ -157,3 +157,27 @@ none fillf32(struct array *array, f32 *ptr, i32 size){
 }
 
 /* ******************************************************************************** */
+
+struct array arrayMove(struct array *src){
+    struct array dest = createArray(src->type);
+
+    while(dest.capacity < src->size)
+        reserve(&dest);
+
+    switch(src->type){
+        case ARRAY_TYPE_INT:
+            dest = fromRawi32(src->type, src->elems.i, src->size);
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            dest = fromRawf32(src->type, src->elems.f, src->size);
+            break;
+    }
+    dest.size = src->size;
+
+    destroyArray(src);
+
+    return dest;
+}
+
+/* ******************************************************************************** */
