@@ -22,10 +22,6 @@ i32 main(){
     };
 
     distrCount(elems, size, maxKeys);
-
-    for(i32 i = 0; i < size; i++)
-        printf("%d ", elems[i]);
-    putchar(10);
 }
 
 /* ******************************************************************************** */
