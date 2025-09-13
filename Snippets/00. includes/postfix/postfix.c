@@ -8,7 +8,7 @@ struct array getPostfix(){
     u8 c;
     struct stackLL stack = stackLLInit();
 
-    struct array array = createArray(INT);
+    struct array array = createArray(TREE_NODE_TYPE_INT);
 
     while(1){
         i32 readResult = scanf("%1c", &c);

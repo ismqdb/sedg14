@@ -14,7 +14,7 @@
 /* ******************************************************************************** */
 
 struct queueArray {
-    treeNodeDataType type;
+    enum treeNodeType type;
     union {
         i32* integer;
         struct treeNode **treeNode;
@@ -27,19 +27,27 @@ struct queueArray {
 
 /* ******************************************************************************** */
 
-void queueArrayPuvtInt(struct queueArray*, i32);
-void queueArrayPutTreeNode(struct queueArray*, struct treeNode*);
+none queueArrayPutInt(struct queueArray*, i32);
+
+/* ******************************************************************************** */
+
+none queueArrayPutTreeNode(struct queueArray*, struct treeNode*);
 
 /* ******************************************************************************** */
 
 i32 queueArrayGetInt(struct queueArray*);
-struct treeNode* queueArrayGetTreeNode(struct queueArray*);
-struct treeNodeRS* queueArrayGetTreeNodeRS(struct queueArray*);
 
 /* ******************************************************************************** */
 
-struct queueArray queueArrayInit(treeNodeDataType, i32);
-void queueArrayDeinit(struct queueArray*);
+struct treeNode* queueArrayGetTreeNode(struct queueArray*);
+
+/* ******************************************************************************** */
+
+struct queueArray queueArrayInit(enum treeNodeType, i32);
+
+/* ******************************************************************************** */
+
+none queueArrayDeinit(struct queueArray*);
 
 /* ******************************************************************************** */
 

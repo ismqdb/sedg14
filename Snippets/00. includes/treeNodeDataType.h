@@ -4,10 +4,9 @@
 
 /* ******************************************************************************** */
 
-typedef enum {
-    INT,
-    TREE_NODE,
-    TREE_NODE_RS
-} treeNodeDataType;
+enum treeNodeType{
+    TREE_NODE_TYPE_INT,
+    TREE_NODE_TYPE_TREE
+};
 
 /* ******************************************************************************** */

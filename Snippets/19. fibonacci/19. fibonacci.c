@@ -37,7 +37,7 @@ i32 fibonacciRR1(i32 n){
     if(n <= 1)
         return 1;
     
-    struct stackArray stack = stackArrayInit(INT, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_INT, 50);
 
     for(i32 i = n; i >= 2; i--)
         stackArrayPushInt(&stack, i);
@@ -63,7 +63,7 @@ i32 fibonacciRR2(i32 n){
     if(n <= 1)
         return 1;
     
-    struct stackArray stack = stackArrayInit(INT, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_INT, 50);
     i32 array[n+2];
 
     for(i32 i = n; i >= 2; i--)

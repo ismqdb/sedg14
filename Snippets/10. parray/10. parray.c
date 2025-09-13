@@ -22,14 +22,14 @@ struct parray parrayInit(i32 size){
 
 /* ******************************************************************************** */
 
-void parrayDeinit(struct parray *array){
+none parrayDeinit(struct parray *array){
     free(array->key);
     free(array->next);
 }
 
 /* ******************************************************************************** */
 
-void parrayDeleteNext(struct parray *array, u8 t){
+none parrayDeleteNext(struct parray *array, u8 t){
     array->next[t] = array->next[array->next[t]];
 }
 
@@ -46,7 +46,7 @@ u8 parrayInsertAfter(struct parray *array, u8 newValue, u8 existing){
 
 /* ******************************************************************************** */
 
-void parrayPrintAll(struct parray *array){
+none parrayPrintAll(struct parray *array){
     u8 x = array->next[array->head];
 
     while(x != array->next[x]){

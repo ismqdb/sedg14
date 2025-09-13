@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void inOrderRR0(struct treeNode *t){
+none inOrderRR0(struct treeNode *t){
     if(t != NULL){
         inOrderRR0(t->left);
         visitTreeNode(t);
@@ -14,8 +14,8 @@ void inOrderRR0(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void inOrderRR1(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(INT, 50);
+none inOrderRR1(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_INT, 50);
 
     l:
         if(t == NULL)

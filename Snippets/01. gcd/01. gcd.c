@@ -4,8 +4,8 @@
 
 /* ******************************************************************************** */
 
-void swap(unsigned long long *x, unsigned long long *y){
-    unsigned long long z;
+none swap(u64 *x, u64 *y){
+    u64 z;
 
     z = *x;
     *x = *y;
@@ -14,8 +14,8 @@ void swap(unsigned long long *x, unsigned long long *y){
 
 /* ******************************************************************************** */
 
-unsigned long long gcd(unsigned long long u, unsigned long long v){
-    unsigned long long t;
+u64 gcd(u64 u, u64 v){
+    u64 t;
 
     u = abs(u);
     v = abs(v);
@@ -30,8 +30,8 @@ unsigned long long gcd(unsigned long long u, unsigned long long v){
 
 /* ******************************************************************************** */
 
-unsigned long long gcdRecursive(unsigned long long *u, unsigned long long *v){
-    unsigned long long t;
+u64 gcdRecursive(u64 *u, u64 *v){
+    u64 t;
 
     *u = abs(*u);
     *v = abs(*v);
@@ -47,8 +47,8 @@ unsigned long long gcdRecursive(unsigned long long *u, unsigned long long *v){
 
 /* ******************************************************************************** */
 
-unsigned long long gcdMod(unsigned long long u, unsigned long long v){
-    unsigned long long t;
+u64 gcdMod(u64 u, u64 v){
+    u64 t;
 
     //u = abs(u);
     //v = abs(v);
@@ -65,7 +65,7 @@ unsigned long long gcdMod(unsigned long long u, unsigned long long v){
 
 /* ******************************************************************************** */
 
-unsigned long long gcd3(unsigned long long x, unsigned long long y, unsigned long long z){
+u64 gcd3(u64 x, u64 y, u64 z){
     return gcdMod(gcdMod(x,y), z);
 }
 

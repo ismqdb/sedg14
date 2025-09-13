@@ -24,12 +24,21 @@ struct parray {
 /* ******************************************************************************** */
 
 struct parray parrayInit(i32);
-void parrayDeinit(struct parray*);
 
 /* ******************************************************************************** */
 
-void parrayDeleteNext(struct parray*, u8);
+none parrayDeinit(struct parray*);
+
+/* ******************************************************************************** */
+
+none parrayDeleteNext(struct parray*, u8);
+
+/* ******************************************************************************** */
+
 u8 parrayInsertAfter(struct parray*, u8, u8);
-void parrayPrintAll(struct parray*);
+
+/* ******************************************************************************** */
+
+none parrayPrintAll(struct parray*);
 
 /* ******************************************************************************** */

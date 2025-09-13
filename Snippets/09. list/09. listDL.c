@@ -19,7 +19,7 @@ struct listDL listDLInit(){
 
 /* ******************************************************************************** */
 
-void listDLDeinit(struct listDL *list){
+none listDLDeinit(struct listDL *list){
     free(list->head);
     free(list->tail);
 }
@@ -39,7 +39,7 @@ struct nodeDLL* listDLInsertAfter(struct nodeDLL *node, i32 value){
 
 /* ******************************************************************************** */
 
-void listDLRemoveNext(struct nodeDLL *node){
+none listDLRemoveNext(struct nodeDLL *node){
     node->next = node->next->next;
     node->next->prev = node;
 }

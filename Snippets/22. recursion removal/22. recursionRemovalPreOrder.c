@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void preOrderRR0(struct treeNode *t){
+none preOrderRR0(struct treeNode *t){
     if(t != NULL){
         visitTreeNode(t);
         preOrderRR0(t->left);
@@ -14,7 +14,7 @@ void preOrderRR0(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrderRR1(struct treeNode *t){
+none preOrderRR1(struct treeNode *t){
     l:
         if(t == NULL)
             goto x;
@@ -29,8 +29,8 @@ void preOrderRR1(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrderRR2(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none preOrderRR2(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
 
     l:
         if(t == NULL)
@@ -52,8 +52,8 @@ void preOrderRR2(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrderRR3(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none preOrderRR3(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
 
     l:
         while(t != NULL){
@@ -74,8 +74,8 @@ void preOrderRR3(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrderRR4(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none preOrderRR4(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
 
     stackArrayPushTreeNode(&stack, t);
 

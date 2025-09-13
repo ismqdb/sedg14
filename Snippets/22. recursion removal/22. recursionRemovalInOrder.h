@@ -15,7 +15,7 @@
 
 /* ******************************************************************************** */
 
-void inOrderRR0(struct treeNode*);
-void inOrderRR1(struct treeNode*);
+none inOrderRR0(struct treeNode*);
+none inOrderRR1(struct treeNode*);
 
 /* ******************************************************************************** */

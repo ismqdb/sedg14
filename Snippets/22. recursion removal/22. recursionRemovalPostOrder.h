@@ -15,7 +15,7 @@
 
 /* ******************************************************************************** */
 
-void postOrderRR0(struct treeNode*);
-void postOrderRR1(struct treeNode*);
+none postOrderRR0(struct treeNode*);
+none postOrderRR1(struct treeNode*);
 
 /* ******************************************************************************** */

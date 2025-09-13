@@ -15,10 +15,10 @@
 
 /* ******************************************************************************** */
 
-void preOrderRR0(struct treeNode*);
-void preOrderRR1(struct treeNode*);
-void preOrderRR2(struct treeNode*);
-void preOrderRR3(struct treeNode*);
-void preOrderRR4(struct treeNode*);
+none preOrderRR0(struct treeNode*);
+none preOrderRR1(struct treeNode*);
+none preOrderRR2(struct treeNode*);
+none preOrderRR3(struct treeNode*);
+none preOrderRR4(struct treeNode*);
 
 /* ******************************************************************************** */

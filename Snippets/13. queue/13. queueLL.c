@@ -13,7 +13,7 @@ struct queueLL queueLLInit(){
 
 /* ******************************************************************************** */
 
-void queueLLPutInt(struct queueLL *queue, i32 value){
+none queueLLPutInt(struct queueLL *queue, i32 value){
     struct node *item = nodeAlloc();
     struct node **p = &queue->head;
 

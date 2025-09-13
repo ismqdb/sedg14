@@ -4,17 +4,17 @@
 
 /* ******************************************************************************** */
 
-struct stackArray stackArrayInit(treeNodeDataType type, i32 size){
+struct stackArray stackArrayInit(enum treeNodeType type, i32 size){
     struct stackArray stack;
     stack.currentSize = 0;
     stack.chunkSize = 25;
     stack.type = type;
 
     switch(type){
-        case INT:
+        case TREE_NODE_TYPE_INT:
             stack.data.integer = heapAllocSized(i32, size);
             break;
-        case TREE_NODE:
+        case TREE_NODE_TYPE_TREE:
             stack.data.treeNode = heapAllocArray(struct treeNode, size);
             break;
     }
@@ -31,14 +31,14 @@ struct stackArray stackArrayInit(treeNodeDataType type, i32 size){
 
 /* ******************************************************************************** */
 
-void stackArrayDeinit(struct stackArray *stack){
+none stackArrayDeinit(struct stackArray *stack){
     stack->p = 0;
 
     switch(stack->type){
-        case INT:
+        case TREE_NODE_TYPE_INT:
             free(stack->data.integer);
             break;
-        case TREE_NODE:
+        case TREE_NODE_TYPE_TREE:
             free(stack->data.treeNode);
             break;
     }
@@ -49,7 +49,7 @@ void stackArrayDeinit(struct stackArray *stack){
 
 /* ******************************************************************************** */
 
-void stackArrayPushInt(struct stackArray *stack, i32 v){
+none stackArrayPushInt(struct stackArray *stack, i32 v){
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
         heapRealloc(i32, stack->data.integer, stack->currentSize);
@@ -63,7 +63,7 @@ void stackArrayPushInt(struct stackArray *stack, i32 v){
 
 /* ******************************************************************************** */
 
-void stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
+none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
         heapArrayRealloc(struct treeNode, stack->data.treeNode, stack->currentSize);

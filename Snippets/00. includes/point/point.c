@@ -29,13 +29,13 @@ struct point *middlePoint(struct point *pt1, struct point *pt2){
 
 /* ******************************************************************************** */
 
-void drawPoint(struct point *pt){
+none drawPoint(struct point *pt){
     
 }
 
 /* ******************************************************************************** */
 
-void lineSegment(struct point *pt1, struct point *pt2){
+none lineSegment(struct point *pt1, struct point *pt2){
     if(!isSamePoint(pt1, pt2)){
         struct point *m = middlePoint(pt1, pt2);
         drawPoint(m);

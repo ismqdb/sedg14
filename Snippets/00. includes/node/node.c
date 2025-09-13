@@ -18,7 +18,7 @@ struct node* nodeAllocInt(i32 value){
 
 /* ******************************************************************************** */
 
-void nodeDealloc(struct node *node){
+none nodeDealloc(struct node *node){
     if(node != NULL)
         free(node);
 }

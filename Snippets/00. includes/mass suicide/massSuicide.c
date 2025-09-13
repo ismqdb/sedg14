@@ -51,7 +51,7 @@ i32 massSuicideArray(i32 n, i32 m){
 
 /* ******************************************************************************** */
 
-void massSuicideLinkedList(i32 n, i32 m){
+none massSuicideLinkedList(i32 n, i32 m){
     if(n <= 0 || m <= 0)
         return;
 
@@ -87,7 +87,7 @@ void massSuicideLinkedList(i32 n, i32 m){
 
 /* ******************************************************************************** */
 
-void massSuicideRecursiveDriver(i32 n, i32 m){
+none massSuicideRecursiveDriver(i32 n, i32 m){
     i32 i;
     struct node *head;
 

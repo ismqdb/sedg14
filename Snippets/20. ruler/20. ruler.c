@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void mark(i32 position, i32 size){}
+none mark(i32 position, i32 size){}
 
 /* ******************************************************************************** */
 
@@ -24,7 +24,7 @@ i32 rulerMarkHeight(i32 num){
 
 /* ******************************************************************************** */
 
-void ruleLevelOrder(i32 left, i32 right, i32 tree_height){
+none ruleLevelOrder(i32 left, i32 right, i32 tree_height){
     for(i32 i = 1, j = 1; i <= tree_height; i++, j <<= 1)
         for(i32 t = 0; t <= (left + right)/j; t++)
             mark(left + j + t * (j+j), i);
@@ -32,7 +32,7 @@ void ruleLevelOrder(i32 left, i32 right, i32 tree_height){
 
 /* ******************************************************************************** */
 
-void rulePreOrder(i32 left, i32 right, i32 height){
+none rulePreOrder(i32 left, i32 right, i32 height){
     i32 middle = (left+right)/2;
 
     if(height > 0){
@@ -44,7 +44,7 @@ void rulePreOrder(i32 left, i32 right, i32 height){
 
 /* ******************************************************************************** */
 
-void ruleInOrder(i32 left, i32 right, i32 height){
+none ruleInOrder(i32 left, i32 right, i32 height){
     i32 middle = (left+right)/2;
 
     if(height > 0){
@@ -56,7 +56,7 @@ void ruleInOrder(i32 left, i32 right, i32 height){
 
 /* ******************************************************************************** */
 
-void ruleIterative(i32 left, i32 right, i32 height){
+none ruleIterative(i32 left, i32 right, i32 height){
     for(i32 i = 1; i <= (right-left); i++)
         mark(i, rulerMarkHeight(i));
 }

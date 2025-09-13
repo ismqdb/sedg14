@@ -9,10 +9,26 @@
 
 /* ******************************************************************************** */
 
-void swap(unsigned long long*, unsigned long long*);
-unsigned long long gcd(unsigned long long, unsigned long long);
-unsigned long long gcdRecursive(unsigned long long*, unsigned long long*);
-unsigned long long gcdMod(unsigned long long, unsigned long long);
-unsigned long long gcd3(unsigned long long, unsigned long long, unsigned long long);
+#include "../00. includes/standardTypes.h"
+
+/* ******************************************************************************** */
+
+none swap(u64*, u64*);
+
+/* ******************************************************************************** */
+
+u64 gcd(u64, u64);
+
+/* ******************************************************************************** */
+
+u64 gcdRecursive(u64*, u64*);
+
+/* ******************************************************************************** */
+
+u64 gcdMod(u64, u64);
+
+/* ******************************************************************************** */
+
+u64 gcd3(u64, u64, u64);
 
 /* ******************************************************************************** */

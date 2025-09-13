@@ -24,7 +24,7 @@ i32 largestLogIterative(i32 x){
 
 /* ******************************************************************************** */
 
-void compareLogs(){
+none compareLogs(){
     i32 x = 210556111;
     clock_t t;
 

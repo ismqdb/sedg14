@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void postOrderRR0(struct treeNode *t){
+none postOrderRR0(struct treeNode *t){
     if(t != NULL){
         postOrderRR0(t->left);
         postOrderRR0(t->right);
@@ -14,8 +14,8 @@ void postOrderRR0(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void postOrderRR1(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(INT, 50);
+none postOrderRR1(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_INT, 50);
     struct treeNode *temp;
 
     l:

@@ -15,9 +15,11 @@
 /* ******************************************************************************** */
 
 i32 massSuicideArray(i32, i32);
-void massSuicideLinkedList(i32, i32);
+none massSuicideLinkedList(i32, i32);
 
-void massSuicideRecursiveDriver(i32, i32);
+/* ******************************************************************************** */
+
+none massSuicideRecursiveDriver(i32, i32);
 i32 massSuicideRecursive(struct node*, i32);
 
 /* ******************************************************************************** */

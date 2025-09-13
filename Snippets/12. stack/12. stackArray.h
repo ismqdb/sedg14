@@ -18,7 +18,7 @@
 /* ******************************************************************************** */
 
 struct stackArray {
-    treeNodeDataType type;
+    enum treeNodeType type;
     union {
         i32* integer;
         struct treeNode** treeNode;
@@ -34,8 +34,8 @@ struct stackArray {
 
 /* ******************************************************************************** */
 
-void stackArrayPushInt(struct stackArray*, i32);
-void stackArrayPushTreeNode(struct stackArray*, struct treeNode*);
+none stackArrayPushInt(struct stackArray*, i32);
+none stackArrayPushTreeNode(struct stackArray*, struct treeNode*);
 
 /* ******************************************************************************** */
 
@@ -44,12 +44,18 @@ struct treeNode* stackArrayPopTreeNode(struct stackArray*);
 
 /* ******************************************************************************** */
 
-struct stackArray stackArrayInit(treeNodeDataType, i32);
-void stackArrayDeinit(struct stackArray*);
+struct stackArray stackArrayInit(enum treeNodeType, i32);
+
+/* ******************************************************************************** */
+
+none stackArrayDeinit(struct stackArray*);
 
 /* ******************************************************************************** */
 
 i32 stackArrayIsEmpty(struct stackArray*);
+
+/* ******************************************************************************** */
+
 i32 stackArraySize(struct stackArray*);
 
 /* ******************************************************************************** */

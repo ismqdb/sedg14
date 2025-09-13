@@ -30,8 +30,8 @@ i32 sieve(i32 size){
 /* ******************************************************************************** */
 
 i32 sieveUnbounded(){
-    unsigned long long i;
-    unsigned long long j;
+    u64 i;
+    u64 j;
 
     size_t size = 30000000;
 
@@ -57,8 +57,8 @@ i32 sieveUnbounded(){
 /* ******************************************************************************** */
 
 i32 sieveOptimized(){
-    unsigned long long i;
-    unsigned long long j;
+    u64 i;
+    u64 j;
 
     size_t n = 340000000;
 

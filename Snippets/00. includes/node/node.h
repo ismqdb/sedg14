@@ -22,6 +22,9 @@ struct node {
 
 struct node* nodeAlloc();
 struct node* nodeAllocInt(i32);
-void nodeDealloc(struct node*);
+
+/* ******************************************************************************** */
+
+none nodeDealloc(struct node*);
 
 /* ******************************************************************************** */

@@ -24,9 +24,18 @@ struct list listInit();
 
 /* ******************************************************************************** */
 
-void listDeleteNext(struct node*);
+none listDeleteNext(struct node*);
+
+/* ******************************************************************************** */
+
 struct node* listInsertAfter(i32, struct node*);
+
+/* ******************************************************************************** */
+
 struct node* listMoveNextToFront(struct list*, struct node*);
-void listExchange(struct node*, struct node*);
+
+/* ******************************************************************************** */
+
+none listExchange(struct node*, struct node*);
 
 /* ******************************************************************************** */

@@ -15,11 +15,11 @@ struct treeNode* treeNodeInitChar(u8 c){
     return n;
 };
 
-void treeNodeDeinit(struct treeNode *n){
+none treeNodeDeinit(struct treeNode *n){
     free(n);
 }
 
-void visitTreeNode(struct treeNode *t){
+none visitTreeNode(struct treeNode *t){
     if(t == NULL)
         return;
     
@@ -29,7 +29,7 @@ void visitTreeNode(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-i32 tnodeCompare(const void *t1, const void *t2){
+i32 tnodePairCompare(const none *t1, const none *t2){
     struct tnodePair *d1 = *(struct tnodePair**)t1;
     struct tnodePair *d2 = *(struct tnodePair**)t2;
 
@@ -64,7 +64,7 @@ i32 binaryTreeDrawRecursive(struct treeNode* t, struct tnodePair **pairs, i32 le
 
 /* ******************************************************************************** */
 
-void externalPathLenTreeNode(struct treeNode *t, i32 level, i32 *len){
+none externalPathLenTreeNode(struct treeNode *t, i32 level, i32 *len){
     if(t->left || t->right)
         level++;
 
@@ -89,7 +89,7 @@ i32 binaryTreeDrawRecursiveDriver(){
 
     i32 k = binaryTreeDrawRecursive(t, pairs, 0, screenWidth);
 
-    qsort(pairs, k, sizeof(struct tnodePair*), tnodeCompare);
+    qsort(pairs, k, sizeof(struct tnodePair*), tnodePairCompare);
 
     putchar(10);
 

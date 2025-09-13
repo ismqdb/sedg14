@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-struct array createArray(treeNodeDataType type){
+struct array createArray(enum treeNodeType type){
     struct array a;
 
     a.currentSize = 0;
@@ -12,7 +12,7 @@ struct array createArray(treeNodeDataType type){
     a.allocatedSize = a.blockSize;
     
     switch(type){
-        case INT:
+        case TREE_NODE_TYPE_INT:
             a.data.ints = heapAllocSized(i32, a.currentSize);
         break;
     }
@@ -22,11 +22,11 @@ struct array createArray(treeNodeDataType type){
 
 /* ******************************************************************************** */
 
-void destroyArray(struct array *a){
+none destroyArray(struct array *a){
     a->currentSize = 0;
 
     switch(a->type){
-        case INT:
+        case TREE_NODE_TYPE_INT:
             free(a->data.ints);
         break;
     }

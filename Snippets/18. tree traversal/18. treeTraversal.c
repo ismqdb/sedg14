@@ -4,8 +4,8 @@
 
 /* ******************************************************************************** */
 
-void levelOrder(struct treeNode *t){
-    struct queueArray queue = queueArrayInit(TREE_NODE, 50);
+none levelOrder(struct treeNode *t){
+    struct queueArray queue = queueArrayInit(TREE_NODE_TYPE_TREE, 50);
 
     queueArrayPutTreeNode(&queue, t);
 
@@ -26,8 +26,8 @@ void levelOrder(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrder(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none preOrder(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
 
     stackArrayPushTreeNode(&stack, t);
 
@@ -48,8 +48,8 @@ void preOrder(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void inOrder(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none inOrder(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
     struct treeNode *temp;
     
     do {
@@ -75,8 +75,8 @@ void inOrder(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void postOrder(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none postOrder(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
     struct treeNode *temp;
 
     do {
@@ -99,8 +99,8 @@ void postOrder(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrderIterative(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
+none preOrderIterative(struct treeNode *t){
+    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_TREE, 50);
 
     stackArrayPushTreeNode(&stack, t);
 
@@ -117,7 +117,7 @@ void preOrderIterative(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void preOrderRecursive(struct treeNode *t){
+none preOrderRecursive(struct treeNode *t){
     if(t != NULL){
         visitTreeNode(t);
         preOrderRecursive(t->left);
@@ -127,7 +127,7 @@ void preOrderRecursive(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void inOrderRecursive(struct treeNode *t){
+none inOrderRecursive(struct treeNode *t){
     if(t != NULL){
         inOrderRecursive(t->left);
         visitTreeNode(t);

@@ -33,14 +33,26 @@ struct treeNode* treeNodeInitChar(u8);
 
 /* ******************************************************************************** */
 
-void treeNodeDeinit(struct treeNode*);
+none treeNodeDeinit(struct treeNode*);
 
 /* ******************************************************************************** */
 
 i32 binaryTreeDrawRecursive(struct treeNode*, struct tnodePair**, i32, i32);
-void externalPathLenTreeNode(struct treeNode*, i32, i32*);
+
+/* ******************************************************************************** */
+
+none externalPathLenTreeNode(struct treeNode*, i32, i32*);
+
+/* ******************************************************************************** */
+
 i32 binaryTreeDrawRecursiveDriver();
-void visitTreeNode(struct treeNode*);
-i32 tnodeCompare(const void*, const void*);
+
+/* ******************************************************************************** */
+
+none visitTreeNode(struct treeNode*);
+
+/* ******************************************************************************** */
+
+i32 tnodePairCompare(const none*, const none*);
 
 /* ******************************************************************************** */

@@ -19,7 +19,7 @@ struct stackLL stackLLInit(){
 
 /* ******************************************************************************** */
 
-void stackLLPushInt(struct stackLL *stack, i32 v){
+none stackLLPushInt(struct stackLL *stack, i32 v){
     struct node *t = nodeAlloc();
     t->key = v;
     t->next = stack->head->next;

@@ -22,7 +22,7 @@ struct stackPA stackPAInit(i32 size){
 
 /* ******************************************************************************** */
 
-void stackPAPushInt(struct stackPA *stack, i32 v){
+none stackPAPushInt(struct stackPA *stack, i32 v){
     struct node *new = nodeAllocInt(v);
     stack->keyArray[stack->current] = new;
 
@@ -55,7 +55,7 @@ struct node* stackPAPopNode(struct stackPA *stack){
 
 /* ******************************************************************************** */
 
-void stackPADeinit(struct stackPA *stack){
+none stackPADeinit(struct stackPA *stack){
     stack->next[stack->head] = 0;
     stack->next[stack->tail] = 0;
 

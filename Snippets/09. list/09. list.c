@@ -18,7 +18,7 @@ struct list listInit(){
 
 /* ******************************************************************************** */
 
-void listDeleteNext(struct node *t){
+none listDeleteNext(struct node *t){
     struct node *x = t->next;
     t->next = t->next->next;
     nodeDealloc(x);
@@ -50,7 +50,7 @@ struct node* listMoveNextToFront(struct list *list, struct node *t){
 
 /* ******************************************************************************** */
 
-void listExchange(struct node *t, struct node *u){
+none listExchange(struct node *t, struct node *u){
     struct node *temp = t->next;
     
     t->next = t->next->next;

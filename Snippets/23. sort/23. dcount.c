@@ -8,7 +8,7 @@
 
 /* ******************************************************************************** */
 
-void simpledc(i32 size){
+none simpledc(i32 size){
     i32 array[size];
     i32 idx[size];
 
@@ -29,7 +29,7 @@ void simpledc(i32 size){
 // N records
 // keys: [0, M-1]
 
-void distrCount(i32 *a, i32 N, i32 M){
+none distrCount(i32 *a, i32 N, i32 M){
     i32 count[M];
     i32 b[N];
 
