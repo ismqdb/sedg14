@@ -33,6 +33,9 @@ none distrCount(i32 *a, i32 N, i32 M){
     i32 count[M];
     i32 b[N];
 
+    memset(count, 0, M*sizeof(i32));
+    memset(b, 0, N*sizeof(i32));
+
     for(i32 i = 0; i < M; i++)
         count[i] = 0;
 
