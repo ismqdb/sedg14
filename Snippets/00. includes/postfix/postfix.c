@@ -16,7 +16,7 @@ struct array getPostfix(){
             break;
 
         if(c == ')'){
-            inserti32(&array, (u8)stackLLPopInt(&stack));
+            arrayInsert_i32(&array, (u8)stackLLPopInt(&stack));
         }
 
         if(c == '+')
@@ -26,17 +26,17 @@ struct array getPostfix(){
             stackLLPushInt(&stack, (i32)c);
 
         while(c >= '0' && c <= '9'){
-            inserti32(&array, c);
+            arrayInsert_i32(&array, c);
             scanf("%1c", &c);
         }
 
         if(c != '(')
-            inserti32(&array, ' ');
+            arrayInsert_i32(&array, ' ');
             
     }
 
     while(!stackLLIsEmpty(&stack))
-        inserti32(&array, (u8)stackLLPopInt(&stack));
+        arrayInsert_i32(&array, (u8)stackLLPopInt(&stack));
 
     return array;
 }

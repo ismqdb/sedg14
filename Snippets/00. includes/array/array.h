@@ -35,11 +35,11 @@ struct array createArray(enum arrayType);
 
 /* ******************************************************************************** */
 
-struct array fromRawi32(enum arrayType, i32*, i32);
+struct array arrayFromRaw_i32(enum arrayType, i32*, i32);
 
 /* ******************************************************************************** */
 
-struct array fromRawf32(enum arrayType, f32*, i32);
+struct array arrayFromRaw_f32(enum arrayType, f32*, i32);
 
 /* ******************************************************************************** */
 
@@ -55,32 +55,35 @@ struct array arrayAppend(struct array*, struct array*);
 
 /* ******************************************************************************** */
 
-none destroyArray(struct array*);
+none arrayDestroy(struct array*);
 
 /* ******************************************************************************** */
 
-none reserve(struct array*);
+none arrayReserve(struct array*);
 
 /* ******************************************************************************** */
 
-none* getBytes(struct array*);
-i32 byteSize(struct array*);
+none* arrayGetBytes(struct array*);
 
 /* ******************************************************************************** */
 
-none inserti32(struct array*, i32);
+i32 arrayByteSize(struct array*);
 
 /* ******************************************************************************** */
 
-none insertf32(struct array*, f32);
+none arrayInsert_i32(struct array*, i32);
 
 /* ******************************************************************************** */
 
-none filli32(struct array*, i32*, i32);
+none arrayInsert_f32(struct array*, f32);
 
 /* ******************************************************************************** */
 
-none fillf32(struct array*, f32*, i32);
+none arrayFill_i32(struct array*, i32*, i32);
+
+/* ******************************************************************************** */
+
+none arrayFill_f32(struct array*, f32*, i32);
 
 /* ******************************************************************************** */
 

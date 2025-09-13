@@ -11,14 +11,14 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {noOfFloats = 8};
+    enum {noOfFloats = 128};
 
     f32 floats[noOfFloats];
 
     for(i32 i = 0; i < noOfFloats; i++)
         floats[i] = (f32)i;
 
-    struct array a = fromRawf32(ARRAY_TYPE_FLOAT, floats, noOfFloats); 
+    struct array a = arrayFromRaw_f32(ARRAY_TYPE_FLOAT, floats, noOfFloats); 
     struct array b = arrayCopy(&a);
 
     struct array c = createArray(ARRAY_TYPE_FLOAT);
