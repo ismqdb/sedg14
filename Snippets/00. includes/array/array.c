@@ -236,3 +236,12 @@ none arrayPrint(struct array *array){
 }
 
 /* ******************************************************************************** */
+
+none arrayInsert_vec4(struct array *array, struct vec4 vec){
+    arrayInsert_f32(array, vec.x);
+    arrayInsert_f32(array, vec.y);
+    arrayInsert_f32(array, vec.z);
+    arrayInsert_f32(array, vec.w);
+}
+
+/* ******************************************************************************** */

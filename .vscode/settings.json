@@ -76,6 +76,7 @@
         "standardtypes.h": "c",
         "stdint.h": "c",
         "bitset": "c",
-        "ranges": "c"
+        "ranges": "c",
+        "point.h": "c"
     }
 }

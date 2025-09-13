@@ -7,11 +7,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 /* ******************************************************************************** */
 
 #include "../standardTypes.h"
-#include "../point/point.h"
+#include "../vec4/vec4.h"
 #include "../macros.h"
 #include "./arrayType.h"
 
@@ -88,5 +89,9 @@ none arrayFill_f32(struct array*, f32*, i32);
 /* ******************************************************************************** */
 
 none arrayPrint(struct array*);
+
+/* ******************************************************************************** */
+
+none arrayInsert_vec4(struct array*, struct vec4);
 
 /* ******************************************************************************** */
