@@ -12,8 +12,7 @@
 #include "../00. includes/treeNodeDataType.h"
 #include "../00. includes/tree node/treeNode.h"
 
-#include "../00. includes/allocMacros.h"
-#include "../00. includes/errorMacros.h"
+#include "../00. includes/macros.h"
 
 /* ******************************************************************************** */
 

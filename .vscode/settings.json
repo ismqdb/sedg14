@@ -74,6 +74,8 @@
         "sstream": "cpp",
         "cinttypes": "cpp",
         "standardtypes.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "bitset": "c",
+        "ranges": "c"
     }
 }
