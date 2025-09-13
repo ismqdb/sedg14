@@ -201,6 +201,8 @@ struct array arrayCopy(struct array *src){
 /* ******************************************************************************** */
 
 struct array arrayAppend(struct array *dest, struct array *src){
+    assert(dest->type == src->type);
+
     while(dest->capacity < (dest->size+src->size))
         reserve(dest);
 
