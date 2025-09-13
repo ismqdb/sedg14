@@ -109,17 +109,15 @@ none insertf32(struct array *array, f32 value){
 /* ******************************************************************************** */
 
 none filli32(struct array *array, i32 *ptr, i32 size){
-    // Refactor to memcpy
-    for(i32 i = 0; i < size; i++)
-        inserti32(array, *(ptr+i));
+    assert(array->type > ARRAY_TYPE_MIN && array->type < ARRAY_TYPE_MAX);
+    memset(array->elems.i, *ptr, size*sizeof(i32));
 }
 
 /* ******************************************************************************** */
 
 none fillf32(struct array *array, f32 *ptr, i32 size){
-    // Refactor to memcpy
-    for(i32 i = 0; i < size; i++)
-        insertf32(array, *(ptr+i));
+    assert(array->type > ARRAY_TYPE_MIN && array->type < ARRAY_TYPE_MAX);
+    memset(array->elems.f, *ptr, size*sizeof(f32));
 }
 
 /* ******************************************************************************** */
