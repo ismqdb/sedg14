@@ -201,3 +201,21 @@ struct array arrayCopy(struct array *src){
 }
 
 /* ******************************************************************************** */
+
+struct array arrayAppend(struct array *dest, struct array *src){
+    while(dest->capacity < (dest->size+src->size))
+        reserve(dest);
+
+    switch(src->type){
+        case ARRAY_TYPE_INT:
+            memcpy(&dest->elems.i[dest->size], src->elems.i, src->size*sizeof(i32));
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            memcpy(&dest->elems.f[dest->size], src->elems.f, src->size*sizeof(f32));
+            break;
+    }
+    dest->size += src->size;    
+}
+
+/* ******************************************************************************** */
