@@ -6,24 +6,29 @@
 #include <math.h>
 #include <assert.h>
 
-#include "Snippets/23. sort/23. sort.h"
-#include "Snippets/23. sort/23. dcount.h"
+#include "./Snippets/00. includes/array/array.h"
 
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {size = 15};
+    enum {noOfFloats = 8};
 
-    enum {maxKeys = 4};
+    f32 floats[noOfFloats];
 
-    i32 in[size] = {
-        'A', 'B', 'B', 'A', 'C', 'A', 'D', 'A',
-        'B', 'B', 'A', 'D', 'D', 'A', 'B'
-    };
+    for(i32 i = 0; i < noOfFloats; i++)
+        floats[i] = (f32)i;
 
-    distrCount(in, size, maxKeys);
+    struct array a = fromRawf32(ARRAY_TYPE_FLOAT, floats, noOfFloats); 
+    struct array b = arrayCopy(&a);
 
-    putchar(10);
+    struct array c = createArray(ARRAY_TYPE_FLOAT);
+
+    arrayAppend(&c, &a);
+    arrayAppend(&c, &b);
+
+    arrayPrint(&a);
+    arrayPrint(&b);
+    arrayPrint(&c);
 }
 
 /* ******************************************************************************** */
