@@ -30,6 +30,32 @@ struct array createArray(enum arrayType t){
 
 /* ******************************************************************************** */
 
+struct array fromRawi32(enum arrayType t, i32 *elems, i32 size){
+    assert(t > ARRAY_TYPE_MIN && t < ARRAY_TYPE_MAX);
+
+    struct array array = createArray(t);
+
+    memcpy(array.elems.i, elems, size*sizeof(i32));
+    memset(elems, '\0', size*sizeof(i32));
+
+    return array;
+}
+
+/* ******************************************************************************** */
+
+struct array fromRawf32(enum arrayType t, f32 *elems, i32 size){
+    assert(t > ARRAY_TYPE_MIN && t < ARRAY_TYPE_MAX);
+
+    struct array array = createArray(t);
+
+    memcpy(array.elems.f, elems, size*sizeof(f32));
+    memset(elems, '\0', size*sizeof(f32));
+
+    return array;
+}
+
+/* ******************************************************************************** */
+
 none destroyArray(struct array *array){
     array->size = 0;
 
