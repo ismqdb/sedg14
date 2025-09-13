@@ -41,8 +41,6 @@ struct array fromRawi32(enum arrayType t, i32 *elems, i32 size){
     memcpy(array.elems.i, elems, size*sizeof(i32));
     array.size = size;
 
-    memset(elems, '\0', size*sizeof(i32));
-
     return array;
 }
 
@@ -176,6 +174,28 @@ struct array arrayMove(struct array *src){
     dest.size = src->size;
 
     destroyArray(src);
+
+    return dest;
+}
+
+/* ******************************************************************************** */
+
+struct array arrayCopy(struct array *src){
+    struct array dest = createArray(src->type);
+
+    while(dest.capacity < src->size)
+        reserve(&dest);
+
+    switch(src->type){
+        case ARRAY_TYPE_INT:
+            dest = fromRawi32(src->type, src->elems.i, src->size);
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            dest = fromRawf32(src->type, src->elems.f, src->size);
+            break;
+    }
+    dest.size = src->size;
 
     return dest;
 }
