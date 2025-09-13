@@ -217,3 +217,20 @@ struct array arrayAppend(struct array *dest, struct array *src){
 }
 
 /* ******************************************************************************** */
+
+none arrayPrint(struct array *array){
+    switch(array->type){
+        case ARRAY_TYPE_INT:
+            for(i32 i = 0; i < array->size; i++)
+                printf("%f ", array->elems.i[i]);
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            for(i32 i = 0; i < array->size; i++)
+                printf("%f ", array->elems.f[i]);
+            break;
+    }
+    putchar(10);
+}
+
+/* ******************************************************************************** */
