@@ -57,8 +57,6 @@ struct array fromRawf32(enum arrayType t, f32 *elems, i32 size){
     memcpy(array.elems.f, elems, size*sizeof(f32));
     array.size = size;
 
-    memset(elems, '\0', size*sizeof(f32));
-
     return array;
 }
 
