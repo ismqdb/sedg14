@@ -6,37 +6,57 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 /* ******************************************************************************** */
 
-#include "../treeNodeDataType.h"
-#include "../macros.h"
 #include "../standardTypes.h"
+#include "../point/point.h"
+#include "../macros.h"
+#include "./arrayType.h"
 
 /* ******************************************************************************** */
 
 struct array {
-    enum treeNodeType type;
+    enum arrayType type;
 
     union {
-        i32* ints;
-    } data;
+        i32 *i;
+        f32 *f;
+    } elems;
 
-    i32 currentSize;
-    i32 allocatedSize;
-    i32 blockSize;
+    i32 size;
+    i32 capacity;
 };
 
 /* ******************************************************************************** */
 
-struct array createArray(enum treeNodeType);
-
-/* ******************************************************************************** */
-
+struct array createArray(enum arrayType);
 none destroyArray(struct array*);
 
 /* ******************************************************************************** */
 
-i32 insertInt(struct array*, i32);
+none reserve(struct array*);
+
+/* ******************************************************************************** */
+
+none* getBytes(struct array*);
+i32 byteSize(struct array*);
+
+/* ******************************************************************************** */
+
+none inserti32(struct array*, i32);
+
+/* ******************************************************************************** */
+
+none insertf32(struct array*, f32);
+
+/* ******************************************************************************** */
+
+none filli32(struct array*, i32*, i32);
+
+/* ******************************************************************************** */
+
+none fillf32(struct array*, f32*, i32);
 
 /* ******************************************************************************** */

@@ -8,7 +8,7 @@ struct array getPostfix(){
     u8 c;
     struct stackLL stack = stackLLInit();
 
-    struct array array = createArray(TREE_NODE_TYPE_INT);
+    struct array array = createArray(ARRAY_TYPE_INT);
 
     while(1){
         i32 readResult = scanf("%1c", &c);
@@ -16,7 +16,7 @@ struct array getPostfix(){
             break;
 
         if(c == ')'){
-            insertInt(&array, (u8)stackLLPopInt(&stack));
+            inserti32(&array, (u8)stackLLPopInt(&stack));
         }
 
         if(c == '+')
@@ -26,19 +26,18 @@ struct array getPostfix(){
             stackLLPushInt(&stack, (i32)c);
 
         while(c >= '0' && c <= '9'){
-            insertInt(&array, c);
+            inserti32(&array, c);
             scanf("%1c", &c);
         }
 
         if(c != '(')
-            insertInt(&array, ' ');
+            inserti32(&array, ' ');
             
     }
 
     while(!stackLLIsEmpty(&stack))
-        insertInt(&array, (u8)stackLLPopInt(&stack));
+        inserti32(&array, (u8)stackLLPopInt(&stack));
 
-    //printf("\n");
     return array;
 }
 
@@ -50,8 +49,8 @@ i32 evaluate(struct array *array){
     i32 sum = 0;
 
     struct stackLL stack = stackLLInit();
-    for(i32 i = 0; i < array->currentSize; i++){
-        c = array->data.ints[i];
+    for(i32 i = 0; i < array->size; i++){
+        c = array->elems.i[i];
 
         if(c == ' ')
             continue;
@@ -67,7 +66,7 @@ i32 evaluate(struct array *array){
         while(c>='0' && c<='9'){
             x = 10*x + (c-'0');
             i++;
-            c = array->data.ints[i];
+            c = array->elems.i[i];
         }
         stackLLPushInt(&stack, x);
     }

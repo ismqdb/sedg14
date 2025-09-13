@@ -4,43 +4,122 @@
 
 /* ******************************************************************************** */
 
-struct array createArray(enum treeNodeType type){
-    struct array a;
+struct array createArray(enum arrayType t){
+    assert(t > ARRAY_TYPE_MIN && t < ARRAY_TYPE_MAX);
 
-    a.currentSize = 0;
-    a.blockSize = 25;
-    a.allocatedSize = a.blockSize;
-    
-    switch(type){
-        case TREE_NODE_TYPE_INT:
-            a.data.ints = heapAllocSized(i32, a.currentSize);
-        break;
+    struct array array;
+
+    array.type = t;
+    array.size = 0;
+    array.capacity = 16;
+
+    switch(array.type){
+        case ARRAY_TYPE_INT:
+            array.elems.i = heapAllocSized(i32, array.capacity);
+            array.elems.i[0] = '\0';
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            array.elems.f = heapAllocSized(f32, array.capacity);
+            array.elems.f[0] = '\0';
+            break;
     }
 
-    return a;
+    return array;
 }
 
 /* ******************************************************************************** */
 
-none destroyArray(struct array *a){
-    a->currentSize = 0;
+none destroyArray(struct array *array){
+    array->size = 0;
 
-    switch(a->type){
-        case TREE_NODE_TYPE_INT:
-            free(a->data.ints);
-        break;
+    switch(array->type){
+        case ARRAY_TYPE_INT:
+            free(array->elems.i);
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            free(array->elems.f);
+            break;
     }
 }
 
 /* ******************************************************************************** */
 
-i32 insertInt(struct array *a, i32 value){
-    if(a->currentSize == a->allocatedSize){
-        a->allocatedSize += 25;
-        a->data.ints = heapRealloc(i32, a->data.ints, a->allocatedSize);
+none reserve(struct array *array){
+    array->capacity *= 2;
+
+    switch(array->type){
+        case ARRAY_TYPE_INT:
+            array->elems.i = 
+                heapRealloc(i32, array->elems.i, array->capacity);
+            break;
+
+        case ARRAY_TYPE_FLOAT:
+            array->elems.f = 
+                heapRealloc(f32, array->elems.f, array->capacity);
+            break;
     }
-    a->data.ints[a->currentSize] = value;
-    a->currentSize++;
+}
+
+/* ******************************************************************************** */
+
+none* getBytes(struct array *array){
+    switch(array->type){
+        case ARRAY_TYPE_INT:
+            return (none*)array->elems.i;
+
+        case ARRAY_TYPE_FLOAT:
+            return (none*)array->elems.f;
+    }
+}
+
+/* ******************************************************************************** */
+
+i32 byteSize(struct array *array){
+    switch(array->type){
+        case ARRAY_TYPE_INT:
+            return sizeof(i32) * array->size;
+
+        case ARRAY_TYPE_FLOAT:
+            return sizeof(f32) * array->size;
+    }
+}
+
+/* ******************************************************************************** */
+
+none inserti32(struct array *array, i32 value){
+    if(array->size == array->capacity)
+        reserve(array);
+
+    array->elems.i[array->size] = value;
+    array->size++;
+}
+
+/* ******************************************************************************** */
+
+none insertf32(struct array *array, f32 value){
+    if(array->size == array->capacity)
+        reserve(array);
+
+    array->elems.f[array->size] = value;
+    array->size++;
+}
+
+/* ******************************************************************************** */
+
+none filli32(struct array *array, i32 *ptr, i32 size){
+    // Refactor to memcpy
+    for(i32 i = 0; i < size; i++)
+        inserti32(array, *(ptr+i));
+}
+
+/* ******************************************************************************** */
+
+none fillf32(struct array *array, f32 *ptr, i32 size){
+    // Refactor to memcpy
+    for(i32 i = 0; i < size; i++)
+        insertf32(array, *(ptr+i));
 }
 
 /* ******************************************************************************** */
