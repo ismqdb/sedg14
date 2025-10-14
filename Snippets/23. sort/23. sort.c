@@ -51,7 +51,7 @@ none shellSort(i8 array[], i32 size){
             temp = array[i];
             j = i;
 
-            while(j>h && array[j-h]>temp){
+            while(j>=h && array[j-h]>temp){
                 array[j] = array[j-h];
                 j -= h;
             }
