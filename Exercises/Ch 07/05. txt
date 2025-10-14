@@ -1,0 +1,6 @@
+Because it would be hard to determine the best value for the sentinel.
+
+Any value that we pick could be one of the actual values in the array.
+
+In a sense, sentinel value should be a different type than array values, 
+if that was possible.

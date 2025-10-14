@@ -1,0 +1,8 @@
+Bubble sort is the slowest.
+ 
+Insertion and selection sorts have slightly similar running times. 
+
+Selection sort does more iterations and comparisons. 
+Insertion sort does more element moving. 
+
+It boils down to the cost of individual assembly instructions.
