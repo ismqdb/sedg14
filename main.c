@@ -6,21 +6,25 @@
 #include <math.h>
 #include <assert.h>
 
-#include "Snippets/23. sort/23. sort.h"
-#include "Snippets/23. sort/23. dcount.h"
+/* ******************************************************************************** */
+
+#include "Snippets/23. sort/23. qsort.h"
 
 /* ******************************************************************************** */
 
-i32 main(){
+i32 main() 
+{
     enum {noOfElems = 10};
-    
-    i8 a[noOfElems];
 
-    for(i32 i = noOfElems-1; i > -1; i--){
-        a[noOfElems-i-1] = i;
-    }
+    i32 array[noOfElems] = {
+        1, 5, 3, 7, 9, 
+        10, 11, 0, 9, 2
+    };
 
-    shellSort(a, noOfElems);
+    quicksort(array, 0, noOfElems-1);
+
+    for(i32 i = 0; i < noOfElems; i++)
+        printf("%d\n", array[i]);
 }
 
 /* ******************************************************************************** */
