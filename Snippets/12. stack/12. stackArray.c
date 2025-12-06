@@ -4,17 +4,18 @@
 
 /* ******************************************************************************** */
 
-struct stackArray stackArrayInit(enum treeNodeType type, i32 size){
+struct stackArray stackArrayInit(enum stackType type, i32 size){
     struct stackArray stack;
+
     stack.currentSize = 0;
     stack.chunkSize = 25;
     stack.type = type;
 
     switch(type){
-        case TREE_NODE_TYPE_INT:
+        case STACK_TYPE_INT:
             stack.data.integer = heapAllocSized(i32, size);
             break;
-        case TREE_NODE_TYPE_TREE:
+        case STACK_TYPE_FLOAT:
             stack.data.treeNode = heapAllocArray(struct treeNode, size);
             break;
     }
@@ -35,10 +36,10 @@ none stackArrayDeinit(struct stackArray *stack){
     stack->p = 0;
 
     switch(stack->type){
-        case TREE_NODE_TYPE_INT:
+        case STACK_TYPE_INT:
             free(stack->data.integer);
             break;
-        case TREE_NODE_TYPE_TREE:
+        case STACK_TYPE_FLOAT:
             free(stack->data.treeNode);
             break;
     }

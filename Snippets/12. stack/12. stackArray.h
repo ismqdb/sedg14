@@ -4,6 +4,10 @@
 
 /* ******************************************************************************** */
 
+#include "./12. stackType.h"
+
+/* ******************************************************************************** */
+
 #include <stdlib.h>
 #include <pthread.h>
 
@@ -17,11 +21,13 @@
 /* ******************************************************************************** */
 
 struct stackArray {
-    enum treeNodeType type;
+    enum stackType type;
+
     union {
         i32* integer;
         struct treeNode** treeNode;
     } data;
+
     i32 p;
     i32 currentSize;
     i32 chunkSize;
@@ -43,7 +49,7 @@ struct treeNode* stackArrayPopTreeNode(struct stackArray*);
 
 /* ******************************************************************************** */
 
-struct stackArray stackArrayInit(enum treeNodeType, i32);
+struct stackArray stackArrayInit(enum stackType, i32);
 
 /* ******************************************************************************** */
 
