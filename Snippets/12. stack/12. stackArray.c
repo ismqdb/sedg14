@@ -51,12 +51,13 @@ none stackArrayDeinit(struct stackArray *stack){
 /* ******************************************************************************** */
 
 none stackArrayPushInt(struct stackArray *stack, i32 v){
+    pthread_mutex_lock(&stack->dataMutex);
+    
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
         heapRealloc(i32, stack->data.integer, stack->currentSize);
     }
 
-    pthread_mutex_lock(&stack->dataMutex);
     stack->data.integer[stack->p++] = v;
     pthread_cond_signal(&stack->hasDataCondVar);
     pthread_mutex_unlock(&stack->dataMutex);
@@ -65,12 +66,13 @@ none stackArrayPushInt(struct stackArray *stack, i32 v){
 /* ******************************************************************************** */
 
 none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
+    pthread_mutex_lock(&stack->dataMutex);
+    
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
         heapArrayRealloc(struct treeNode, stack->data.treeNode, stack->currentSize);
     }
 
-    pthread_mutex_lock(&stack->dataMutex);
     stack->data.treeNode[stack->p++] = tnode;
     pthread_cond_signal(&stack->hasDataCondVar);
     pthread_mutex_unlock(&stack->dataMutex);
@@ -79,11 +81,10 @@ none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
 /* ******************************************************************************** */
 
 i32 stackArrayPopInt(struct stackArray *stack){
-    pthread_mutex_lock(&stack->dataMutex);
-
     if(stackArrayIsEmpty(stack))
         pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
 
+    pthread_mutex_lock(&stack->dataMutex);
     i32 value = stack->data.integer[--stack->p];
     pthread_mutex_unlock(&stack->dataMutex);
 
@@ -93,11 +94,10 @@ i32 stackArrayPopInt(struct stackArray *stack){
 /* ******************************************************************************** */
 
 struct treeNode* stackArrayPopTreeNode(struct stackArray *stack){
-    pthread_mutex_lock(&stack->dataMutex);
-
     if(stackArrayIsEmpty(stack))
         pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
-        
+    
+    pthread_mutex_lock(&stack->dataMutex); 
     struct treeNode* tnode = stack->data.treeNode[--stack->p];
     pthread_mutex_unlock(&stack->dataMutex);
 
