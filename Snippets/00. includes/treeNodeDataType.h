@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 enum treeNodeType{
-    TREE_NODE_TYPE_INT,
+    STACK_TYPE_TREE,
     TREE_NODE_TYPE_TREE
 };
 

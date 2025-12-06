@@ -9,6 +9,7 @@ enum stackType {
 
     STACK_TYPE_INT,
     STACK_TYPE_FLOAT,
+    STACK_TYPE_TREE_NODE,
 
     STACK_TYPE_MAX
 };

@@ -15,7 +15,7 @@ struct stackArray stackArrayInit(enum stackType type, i32 size){
         case STACK_TYPE_INT:
             stack.data.integer = heapAllocSized(i32, size);
             break;
-        case STACK_TYPE_FLOAT:
+        case STACK_TYPE_TREE_NODE:
             stack.data.treeNode = heapAllocArray(struct treeNode, size);
             break;
     }
@@ -39,7 +39,7 @@ none stackArrayDeinit(struct stackArray *stack){
         case STACK_TYPE_INT:
             free(stack->data.integer);
             break;
-        case STACK_TYPE_FLOAT:
+        case STACK_TYPE_TREE_NODE:
             free(stack->data.treeNode);
             break;
     }
@@ -65,7 +65,7 @@ none stackArrayPushInt(struct stackArray *stack, i32 v){
 
 /* ******************************************************************************** */
 
-none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
+none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode *tnode){
     pthread_mutex_lock(&stack->dataMutex);
     
     if(stack->p == stack->currentSize){

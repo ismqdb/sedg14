@@ -15,7 +15,7 @@ none postOrderRR0(struct treeNode *t){
 /* ******************************************************************************** */
 
 none postOrderRR1(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_INT, 50);
+    struct stackArray stack = stackArrayInit(STACK_TYPE_TREE, 50);
     struct treeNode *temp;
 
     l:

@@ -15,7 +15,7 @@ none inOrderRR0(struct treeNode *t){
 /* ******************************************************************************** */
 
 none inOrderRR1(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE_TYPE_INT, 50);
+    struct stackArray stack = stackArrayInit(STACK_TYPE_TREE, 50);
 
     l:
         if(t == NULL)
