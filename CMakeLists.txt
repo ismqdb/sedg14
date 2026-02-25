@@ -15,6 +15,9 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/point/point.c"
     "Snippets/00. includes/vec4/vec4.c"
 
+    "Snippets/00. includes/com/guid.c"
+    "Snippets/00. includes/com/MyObject.c"
+
     "Snippets/00. includes/mat4/initMat4.c"
     "Snippets/00. includes/mat4/operationsMat4.c"
     "Snippets/00. includes/mat4/transformationsMat4.c"

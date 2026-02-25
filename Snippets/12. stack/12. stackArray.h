@@ -5,7 +5,10 @@
 /* ******************************************************************************** */
 
 #include <stdlib.h>
-#include <pthread.h>
+
+#ifdef __linux__
+    #include <pthread.h>
+#endif
 
 /* ******************************************************************************** */
 
@@ -26,9 +29,11 @@ struct stackArray {
     i32 currentSize;
     i32 chunkSize;
 
-    pthread_mutex_t dataMutex;
-    pthread_mutex_t ptrMutex;
-    pthread_cond_t hasDataCondVar;
+    #ifdef __linux__
+        pthread_mutex_t dataMutex;
+        pthread_mutex_t ptrMutex;
+        pthread_cond_t hasDataCondVar;
+    #endif
 };
 
 /* ******************************************************************************** */
