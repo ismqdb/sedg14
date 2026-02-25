@@ -1,0 +1,8 @@
+For 1000 elements, sorted in reverse, counted in micro seconds:
+
+shell:      83
+knuth:      80
+hibbard:    74
+sedg1:      59
+sedg2:      1204
+tokuda:     40

@@ -4,9 +4,14 @@
 
 /* ******************************************************************************** */
 
-enum treeNodeType{
-    STACK_TYPE_TREE,
-    TREE_NODE_TYPE_TREE
+enum stackType {
+    STACK_TYPE_MIN = -1,
+
+    STACK_TYPE_INT,
+    STACK_TYPE_FLOAT,
+    STACK_TYPE_TREE_NODE,
+
+    STACK_TYPE_MAX
 };
 
 /* ******************************************************************************** */

@@ -36,28 +36,3 @@ none selectionSort(i32 array[], i32 size){
 }
 
 /* ******************************************************************************** */
-
-none shellSort(i8 array[], i32 size){
-    i32 i;
-    i32 j;
-    i32 h;
-    i32 temp;
-
-    for(h = 1; h <= size/9; h = 3*h+1)
-        ;
-
-    for(; h > 0; h /= 3){
-        for(i = h; i < size; i++){
-            temp = array[i];
-            j = i;
-
-            while(j>=h && array[j-h]>temp){
-                array[j] = array[j-h];
-                j -= h;
-            }
-            array[j] = temp;
-        }
-    }
-}
-
-/* ******************************************************************************** */

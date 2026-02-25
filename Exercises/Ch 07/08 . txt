@@ -1,0 +1,5 @@
+The sort is stable if it preserves the relative order of same key elements. 
+
+By that, insertion and bubble sort are stable, since they stop current iterations
+when they encounter same-key elements but selection sort is not, since it can move
+elements arbitrarily.

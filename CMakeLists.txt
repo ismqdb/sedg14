@@ -56,8 +56,11 @@ add_executable(sedg14 main.c
 
     "Snippets/23. sort/23. sort.c"
     "Snippets/23. sort/23. sort3.c"
+    "Snippets/23. sort/23. sort4.c"
     "Snippets/23. sort/23. insSort.c"
     "Snippets/23. sort/23. dcount.c"
+    "Snippets/23. sort/23. shellSort.c"
+    "Snippets/23. sort/23. qsort.c"
 )
 
 target_link_libraries(sedg14 m) # Link libmath

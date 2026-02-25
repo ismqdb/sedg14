@@ -59,7 +59,7 @@ struct queueArray queueArrayInit(enum treeNodeType type, i32 size){
     queue.current_size = size;
 
     switch(type){
-        case TREE_NODE_TYPE_INT:
+        case STACK_TYPE_TREE:
             queue.data.integer = (i32*)malloc(queue.current_size*sizeof(i32));
         break;
 
@@ -88,7 +88,7 @@ none queueArrayDeinit(struct queueArray *queue){
     queue->tail = 0;
 
     switch(queue->type){
-        case TREE_NODE_TYPE_INT:
+        case STACK_TYPE_TREE:
             free(queue->data.integer);
         break;
 
