@@ -24,7 +24,7 @@ void stack_push(struct gstack *stack, none *elem){
     }
 
     none *dest = (char*)stack->data + stack->size * stack->elem_size;
-    memcpy(dest, elem, stack->elem_size);
+    stack->ops.copy(dest, elem);
 
     stack->size++;
 }
