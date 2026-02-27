@@ -15,11 +15,11 @@ typedef struct IMyInterface IMyInterface;
 /* ******************************************************************************** */
 
 struct IMyInterfaceVtbl {
-    h_result    (*QueryInterface)(IMyInterface *This, REFIID riid, void **ppvObject);
-    u_long32    (*AddRef)(IMyInterface *This);
-    u_long32    (*Release)(IMyInterface *This);
+    h_result    (*QueryInterface)   (IMyInterface *This, REFIID riid, void **ppvObject);
+    u_long32    (*AddRef)           (IMyInterface *This);
+    u_long32    (*Release)          (IMyInterface *This);
 
-    void        (*SayHello)(IMyInterface*);
+    void        (*SayHello)         (IMyInterface*);
 };
 
 /* ******************************************************************************** */
