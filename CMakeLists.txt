@@ -37,6 +37,8 @@ add_executable(sedg14 main.c
 
     "Snippets/10. parray/10. parray.c"
 
+    "Snippets/12. gstack/12. gstack.c"
+
     "Snippets/12. stack/12. stackLL.c"
     "Snippets/12. stack/12. stackArray.c"
     "Snippets/12. stack/12. stackPA.c"

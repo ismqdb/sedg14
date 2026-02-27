@@ -1,20 +1,21 @@
 /* ******************************************************************************** */
 
-struct gstack;
+#include "../00. includes/standardTypes.h"
 
 /* ******************************************************************************** */
 
-struct stackVTable {
-    void    (*push)     (struct gstack*, const void*);
-    void    (*pop)      (struct gstack*);
-    void*   (*top)      (struct gstack*);
-    void    (*destroy)  (struct gstack*);
-};
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
 
 /* ******************************************************************************** */
 
 struct gstack {
-    const struct stackVTable *vtable;
+    none *data;
+
+    size_t elem_size;
+    size_t size;
+    size_t capacity;
 };
 
 /* ******************************************************************************** */
