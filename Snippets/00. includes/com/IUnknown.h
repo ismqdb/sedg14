@@ -14,9 +14,9 @@ typedef struct IUnknown IUnknown;
 /* ******************************************************************************** */
 
 typedef struct IUnknownVtbl {
-    h_result    (*QueryInterface)(IUnknown *This, REFIID riid, void **ppvObject);
-    u_long32      (*AddRef)(IUnknown *This);
-    u_long32      (*Release)(IUnknown *This);
+    h_result        (*QueryInterface)   (IUnknown *This, REFIID riid, void **ppvObject);
+    u_long32        (*AddRef)           (IUnknown *This);
+    u_long32        (*Release)          (IUnknown *This);
 } IUnknownVtbl;
 
 /* ******************************************************************************** */
