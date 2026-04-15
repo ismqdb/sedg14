@@ -9,27 +9,21 @@
 /* ******************************************************************************** */
 
 #include "Snippets/23. sort/23. qsort.h"
-#include "Snippets/12. gstack/12. array_stack.c"
 
 /* ******************************************************************************** */
 
 i32 main(){
-    struct element_ops ops = {i32_copy, i32_destroy};
-    struct i_gstack *stack = array_stack_create(sizeof(i32), ops);
+    enum {noOfElems = 10};
 
-    i32 a = 10;
-    i32 b = 20;
+    i32 array[noOfElems] = {
+        1, 5, 3, 7, 9, 
+        10, 11, 0, 9, 2
+    };
 
-    stack->lp_vtbl->push(stack, &a);
-    stack->lp_vtbl->push(stack, &b);
+    quicksort(array, 0, noOfElems-1);
 
-    i32 *top = stack->lp_vtbl->top(stack);
-    printf("%d\n", *top);
-
-    stack->lp_vtbl->pop(stack);
-
-    top = stack->lp_vtbl->top(stack);
-    printf("%d\n", *top);
+    for(i32 i = 0; i < noOfElems; i++)
+        printf("%d\n", array[i]);
 }
 
 /* ******************************************************************************** */

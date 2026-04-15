@@ -23,9 +23,11 @@ struct stackArray stackArrayInit(enum stackType type, i32 size){
     stack.p = 0;
     stack.currentSize += size;
 
+    #ifdef __linux__
     pthread_mutex_init(&stack.dataMutex, NULL);
     pthread_mutex_init(&stack.ptrMutex, NULL);
     pthread_cond_init(&stack.hasDataCondVar, NULL);
+    #endif
 
     return stack;
 }
@@ -44,14 +46,18 @@ none stackArrayDeinit(struct stackArray *stack){
             break;
     }
 
+    #ifdef __linux__
     pthread_mutex_destroy(&stack->dataMutex);
     pthread_cond_destroy(&stack->hasDataCondVar);
+    #endif
 }
 
 /* ******************************************************************************** */
 
 none stackArrayPushInt(struct stackArray *stack, i32 v){
+    #ifdef __linux__
     pthread_mutex_lock(&stack->dataMutex);
+    #endif
     
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
@@ -59,14 +65,19 @@ none stackArrayPushInt(struct stackArray *stack, i32 v){
     }
 
     stack->data.integer[stack->p++] = v;
+
+    #ifdef __linux__
     pthread_cond_signal(&stack->hasDataCondVar);
     pthread_mutex_unlock(&stack->dataMutex);
+    #endif
 }
 
 /* ******************************************************************************** */
 
 none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode *tnode){
+    #ifdef __linux__
     pthread_mutex_lock(&stack->dataMutex);
+    #endif
     
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
@@ -74,19 +85,28 @@ none stackArrayPushTreeNode(struct stackArray *stack, struct treeNode *tnode){
     }
 
     stack->data.treeNode[stack->p++] = tnode;
+
+    #ifdef __linux__
     pthread_cond_signal(&stack->hasDataCondVar);
     pthread_mutex_unlock(&stack->dataMutex);
+    #endif
 }
 
 /* ******************************************************************************** */
 
 i32 stackArrayPopInt(struct stackArray *stack){
+    #ifdef __linux__
     if(stackArrayIsEmpty(stack))
         pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
 
     pthread_mutex_lock(&stack->dataMutex);
+    #endif
+
     i32 value = stack->data.integer[--stack->p];
+
+    #ifdef __linux__
     pthread_mutex_unlock(&stack->dataMutex);
+    #endif
 
     return value;
 }
@@ -94,12 +114,18 @@ i32 stackArrayPopInt(struct stackArray *stack){
 /* ******************************************************************************** */
 
 struct treeNode* stackArrayPopTreeNode(struct stackArray *stack){
+    #ifdef __linux__
     if(stackArrayIsEmpty(stack))
         pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
     
     pthread_mutex_lock(&stack->dataMutex); 
+    #endif
+
     struct treeNode* tnode = stack->data.treeNode[--stack->p];
+
+    #ifdef __linux__
     pthread_mutex_unlock(&stack->dataMutex);
+    #endif
 
     return tnode;
 }
@@ -107,9 +133,14 @@ struct treeNode* stackArrayPopTreeNode(struct stackArray *stack){
 /* ******************************************************************************** */
 
 i32 stackArrayIsEmpty(struct stackArray *stack){
+    #ifdef __linux__
     pthread_mutex_lock(&stack->ptrMutex);
+    #endif
     i32 empty = !stack->p;
+
+    #ifdef __linux__
     pthread_mutex_unlock(&stack->ptrMutex);
+    #endif
 
     return empty;
 }
@@ -117,9 +148,14 @@ i32 stackArrayIsEmpty(struct stackArray *stack){
 /* ******************************************************************************** */
 
 i32 stackArraySize(struct stackArray *stack){
+    #ifdef __linux__
     pthread_mutex_lock(&stack->dataMutex);
+    #endif
     i32 size = stack->p > 0 ? stack->p - 1 : 0;
+
+    #ifdef __linux__
     pthread_mutex_unlock(&stack->dataMutex);
+    #endif
 
     return size;
 }
