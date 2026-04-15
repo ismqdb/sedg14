@@ -9,8 +9,8 @@
 /* ******************************************************************************** */
 
 none simpledc(i32 size){
-    i32 array[size];
-    i32 idx[size];
+    i32 *array = (i32*)malloc(size * sizeof(i32));
+    i32 *idx = (i32*)malloc(size * sizeof(i32));
 
     for(i32 i = 0; i < size; i++){
         array[i] = i;
@@ -30,8 +30,8 @@ none simpledc(i32 size){
 // keys: [0, maxKey-1]
 
 none distrCount(i32 *in, i32 noOfElems, i32 maxKey){
-    i32 count[maxKey];
-    i32 out[noOfElems];
+    i32 *count = (i32*)malloc(maxKey * sizeof(i32));
+    i32 *out = (i32*)malloc(noOfElems * sizeof(i32));
 
     memset(count, 0, maxKey*sizeof(i32));
     memset(out, 0, noOfElems*sizeof(i32));

@@ -35,7 +35,7 @@ i32 sieveUnbounded(){
 
     size_t size = 30000000;
 
-    i32 vec[(i32)pow(10, 9)];
+    i32 *vec = (i32*)malloc(((i32)pow(10, 9)) * sizeof(i32));
 
     for(vec[1] = 0, i = 2; i < size; i++)
         vec[i] = 1;
@@ -62,8 +62,8 @@ i32 sieveOptimized(){
 
     size_t n = 340000000;
 
-    i32 lp[n+1];
-    i32 pr[n+1];
+    i32 *lp = (i32*)malloc((n+1)*sizeof(i32));
+    i32 *pr = (i32*)malloc((n+1)*sizeof(i32));
 
     i32 prCurrent = 0;
 

@@ -65,6 +65,3 @@ add_executable(sedg14 main.c
     "Snippets/23. sort/23. qsort.c"
 )
 
-target_link_libraries(sedg14 m) # Link libmath
-
-target_compile_options(sedg14 PRIVATE -g3)
