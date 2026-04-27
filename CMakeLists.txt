@@ -18,10 +18,6 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/com/guid.c"
     "Snippets/00. includes/com/MyObject.c"
 
-    "Snippets/00. includes/mat4/initMat4.c"
-    "Snippets/00. includes/mat4/operationsMat4.c"
-    "Snippets/00. includes/mat4/transformationsMat4.c"
-
     "Snippets/00. includes/recurrences/halfInput.c"
     "Snippets/00. includes/recurrences/largestLog.c"
 
@@ -36,8 +32,6 @@ add_executable(sedg14 main.c
     "Snippets/09. list/09. listDL.c"
 
     "Snippets/10. parray/10. parray.c"
-
-    "Snippets/12. gstack/12. element_ops.c"
 
     "Snippets/12. stack/12. stackLL.c"
     "Snippets/12. stack/12. stackArray.c"
